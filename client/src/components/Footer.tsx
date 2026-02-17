@@ -1,44 +1,172 @@
 import { Link } from "wouter";
+import { Linkedin, Twitter, Youtube } from "lucide-react";
+import logo from "../pages/images/logo.png";
 
 export function Footer() {
-    return (
-        <footer className="bg-gray-900 text-gray-300 py-12">
-            <div className="container mx-auto px-4">
-                <div className="grid grid-cols-4 gap-8 mb-8">
-                    <div>
-                        <h4 className="text-white font-bold mb-4">Company</h4>
-                        <ul className="space-y-2">
-                            <li><Link href="/about"><a className="hover:text-white transition">About Us</a></Link></li>
-                            <li><Link href="/services"><a className="hover:text-white transition">Services</a></Link></li>
-                            <li><Link href="/projects"><a className="hover:text-white transition">Projects</a></Link></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 className="text-white font-bold mb-4">Services</h4>
-                        <ul className="space-y-2">
-                            <li><a href="#" className="hover:text-white transition">Startup Advisory</a></li>
-                            {/* Workshops removed as per request */}
-                            <li><Link href="/coming-soon"><a className="hover:text-white transition">AI Solutions</a></Link></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 className="text-white font-bold mb-4">Resources</h4>
-                        <ul className="space-y-2">
-                            <li><Link href="/coming-soon"><a className="hover:text-white transition">Blog</a></Link></li>
-                            {/* Case Studies removed as per request */}
-                            <li><Link href="/events"><a className="hover:text-white transition">Events</a></Link></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 className="text-white font-bold mb-4">Contact</h4>
-                        <p className="mb-2">Email: Salim@ixlconsulting.tech</p>
-                        <p className="text-sm text-gray-400">Ready to discuss your next project?</p>
-                    </div>
-                </div>
-                <div className="border-t border-gray-700 pt-8 text-center text-sm">
-                    <p>&copy; 2025 iXL Consulting. All Rights Reserved.</p>
-                </div>
+  return (
+    <footer className="bg-[#0b1024] text-gray-300 pt-10 pb-6 mt-12">
+      <div className="container mx-auto px-4">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 items-start mb-6">
+          {/* Column 1: Branding */}
+          <div className="space-y-3">
+            <div className="flex items-center gap-3">
+              <img
+                src={logo}
+                alt="iXL Consulting Logo"
+                className="h-10 w-auto object-contain"
+              />
+              <span className="text-lg font-semibold text-white">
+                iXL Consulting
+              </span>
             </div>
-        </footer>
-    );
+            <p className="text-sm text-gray-300">
+              Elevating Innovation, Empowering Digital Excellence
+            </p>
+          </div>
+
+          {/* Column 2: Navigation */}
+          <div>
+            <h4 className="text-white font-semibold mb-3 text-sm tracking-wide">
+              Navigation
+            </h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/">
+                  <a className="hover:text-white transition-colors">Home</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/services">
+                  <a className="hover:text-white transition-colors">Services</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/about">
+                  <a className="hover:text-white transition-colors">About</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/projects">
+                  <a className="hover:text-white transition-colors">
+                    Case Studies
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/partners">
+                  <a className="hover:text-white transition-colors">Partners</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/insights">
+                  <a className="hover:text-white transition-colors">
+                    Blog/Insights
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact">
+                  <a className="hover:text-white transition-colors">Contact</a>
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3: Focus Areas (Core Services) */}
+          <div>
+            <h4 className="text-white font-semibold mb-3 text-sm tracking-wide">
+              Focus Areas
+            </h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <a
+                  href="/services#chief-of-staff"
+                  className="hover:text-white transition-colors"
+                >
+                  Chief of Staff & Agile
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/services#innovation-transformation"
+                  className="hover:text-white transition-colors"
+                >
+                  Innovation Transformation
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/services#ai-transformation"
+                  className="hover:text-white transition-colors"
+                >
+                  AI Transformation
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/services#training-talent"
+                  className="hover:text-white transition-colors"
+                >
+                  Training & Talent
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/services#external-growth-partnerships"
+                  className="hover:text-white transition-colors"
+                >
+                  External Growth
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 4: Contact / Social */}
+          <div>
+            <h4 className="text-white font-semibold mb-3 text-sm tracking-wide">
+              Get in Touch
+            </h4>
+            <a
+              href="mailto:salim@ixlconsulting.tech"
+              className="text-sm text-[#C9A84C] hover:underline block mb-4"
+            >
+              salim@ixlconsulting.tech
+            </a>
+            <div className="flex items-center gap-3">
+              <a
+                href="#"
+                aria-label="LinkedIn"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-600 hover:border-[#C9A84C] hover:text-[#C9A84C] transition-colors"
+              >
+                <Linkedin className="h-4 w-4" />
+              </a>
+              <a
+                href="#"
+                aria-label="X (Twitter)"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-600 hover:border-[#C9A84C] hover:text-[#C9A84C] transition-colors"
+              >
+                <Twitter className="h-4 w-4" />
+              </a>
+              <a
+                href="#"
+                aria-label="YouTube"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-600 hover:border-[#C9A84C] hover:text-[#C9A84C] transition-colors"
+              >
+                <Youtube className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="border-t border-gray-800 pt-3 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] text-gray-500">
+          <p>© 2026 iXL Consulting. All rights reserved.</p>
+          <p className="text-center md:text-right">
+            AI transformation consulting MENA · Chief of Staff consulting Saudi
+            Arabia · innovation strategy Vision 2030 · developer community MENA
+            · hackathon management Middle East
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
 }

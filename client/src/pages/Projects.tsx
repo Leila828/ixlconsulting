@@ -1,212 +1,307 @@
 import { Card } from "@/components/ui/card";
-import { ArrowRight, Award, Users, Globe, Zap, Calendar, MapPin, Monitor } from "lucide-react";
-import { Link } from "wouter";
+import { ArrowRight, Award, Globe2, Target } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-
-
-/**
- * Design Philosophy: Professional Minimalism with Strategic Blue Accents
- * - Showcase major projects and achievements
- * - Timeline-based presentation of key milestones
- * - Visual hierarchy emphasizing impact and scale
- */
+import { Link } from "wouter";
 
 export default function Projects() {
-  const leadershipPrograms = [
-    {
-      title: "Leading AI Transformation in Banking",
-      details: "Virtual & Hybrid sessions for CXO/Fintech teams",
-      when: "Nov/Dec 2025",
-      type: "Executive"
-    },
-    {
-      title: "Demystify AI & Machine Learning",
-      details: "Practical AI application minus the buzzwords",
-      when: "Dec 17 (Riyadh)",
-      type: "Workshop"
-    },
-    {
-      title: "Leading Digital Innovation and Change",
-      details: "Governance and scaling of digital change",
-      when: "Mar 24-26 (Riyadh)",
-      type: "Leadership"
-    }
-  ];
-
-  const hackathons = [
-    { name: "Hajj Hackathon 2018", detail: "Guinness World Record (3,000+ participants)" },
-    { name: "AI Hack Africa", detail: "Large-scale event with 1,000+ participants" },
-    { name: "Oman Ideathon", detail: "Major innovation competition (1,000+ attendees)" },
-    { name: "Smartathon", detail: "Smart Cities Challenge focused on urban innovation" },
-    { name: "Neom Hackathon", detail: "Future of technology within NEOM ecosystem" },
-    { name: "MENA Challenge", detail: "Regional competition for tech innovation" },
-    { name: " AI Hack-Tunis", detail: "Technology competition supported by global partners" },
-    { name: " Lensathon", detail: "Creating Snapchat Lens using Lens studio" }
-  ];
-
-  const ceremonies = [
-    { name: "SDAIA Innovators Ceremony", detail: "220+ VVIP/VIP guests" },
-    { name: "CST Digital Technology Forum", detail: "Major forum with 1,500+ attendees (2023)" },
-    { name: "SDAIA Holo Show", detail: "High-tech presentation ceremony" },
-    { name: "Tawakkalna Holo Show", detail: "Specialized event showcasing Tawakkalna ecosystem" }
-  ];
-
-  const roadshows = [
-    { name: "Snap AR Roadshow MENA", detail: "9-week tour, 20 events focused on AR" },
-    { name: "60 Days Challenge", detail: "Developer training program conducted via YouTube" },
-    { name: "Google Tech Events", detail: "Thousands of tech events for 500+ communities" }
-  ];
-
-  const diversity = [
-    { name: "Women Techmakers Programs", detail: "Regional community events for women in tech" },
-    { name: "Women Founders Program", detail: "In collaboration with US State Department" },
-    { name: "Women Safety Hackathon", detail: "Focused on using tech to improve safety" }
-  ];
-
-
-
   return (
-    <div className="min-h-screen bg-white">
-      {/* Navigation */}
+    <div className="min-h-screen bg-background text-foreground">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="bg-secondary py-20">
-        <div className="container mx-auto px-4 text-center space-y-6">
-          <h1 className="text-5xl font-bold text-primary">Our Projects & Impact</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Driving innovation through major hackathons, executive programs, and ecosystem initiatives across the MENA region.
+      {/* Hero */}
+      <section className="bg-secondary py-16 md:py-20 border-b border-border/60">
+        <div className="container mx-auto px-4 text-center space-y-5">
+          <p className="text-xs font-semibold tracking-[0.25em] uppercase text-muted-foreground">
+            Case Studies
+          </p>
+          <h1 className="text-3xl md:text-4xl font-bold text-primary">
+            Proven at Scale — From Silicon Valley to the Arabian Peninsula
+          </h1>
+          <p className="text-sm md:text-base text-muted-foreground max-w-3xl mx-auto">
+            A selection of programs, hackathons, and transformation initiatives that demonstrate
+            iXL&apos;s ability to execute at scale across governments, Big Tech, and ecosystems.
           </p>
         </div>
       </section>
 
-      {/* Executive Programs */}
-      <section className="py-20">
+      {/* Case Study 1 — Hajj Hackathon 2018 */}
+      <section className="bg-white py-14 md:py-16 border-b border-border/60">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-primary mb-4">Executive & Leadership Programs</h2>
-            <p className="text-lg text-muted-foreground">in Partnership with Ivey Executive Education</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {leadershipPrograms.map((prog, i) => (
-              <Card key={i} className="p-8 border-t-4 border-t-accent hover:shadow-lg transition-all">
-                <div className="bg-secondary/50 p-3 rounded-full w-fit mb-4">
-                  <Calendar className="text-primary" size={24} />
-                </div>
-                <h3 className="text-xl font-bold text-primary mb-2 line-clamp-2 min-h-[3.5rem]">{prog.title}</h3>
-                <p className="text-sm font-semibold text-accent mb-4">{prog.when}</p>
-                <p className="text-muted-foreground">{prog.details}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Major Hackathons & Competitions */}
-      <section className="bg-secondary py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-primary mb-4">Major Hackathons & Competitions</h2>
-            <p className="text-lg text-muted-foreground">Landmark events that shaped the ecosystem</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {hackathons.map((item, i) => (
-              <div key={i} className="flex gap-4 p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-all">
-                <div className="flex-shrink-0 mt-1">
-                  <Award className="text-accent" size={24} />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-primary mb-2">{item.name}</h3>
-                  <p className="text-muted-foreground text-sm">{item.detail}</p>
-                </div>
+          <Card className="p-6 md:p-8 grid gap-6 md:grid-cols-[1.4fr,1fr] items-start border border-border/80">
+            <div className="space-y-3">
+              <div className="inline-flex items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
+                <Award className="h-3 w-3 text-primary" />
+                Case Study 1
               </div>
-            ))}
-          </div>
+              <h2 className="text-xl md:text-2xl font-bold text-primary">
+                Hajj Hackathon 2018 — World&apos;s Largest Hackathon
+              </h2>
+              <p className="text-xs md:text-sm font-semibold text-muted-foreground">
+                Client: Saudi Government
+              </p>
+              <p className="text-sm text-muted-foreground">
+                iXL leadership played a central role in designing and executing the Hajj Hackathon
+                2018, transforming a national vision into a globally recognized innovation event.
+              </p>
+              <ul className="space-y-2 text-xs md:text-sm text-muted-foreground">
+                <li>
+                  <span className="font-semibold text-foreground">Challenge:</span> Organize the
+                  world&apos;s largest hackathon during Hajj, under strict logistical and cultural
+                  constraints.
+                </li>
+                <li>
+                  <span className="font-semibold text-foreground">Result:</span> Over 3,000
+                  participants, Guinness World Record, and international coverage featuring Steve
+                  Wozniak (Apple Co-Founder).
+                </li>
+              </ul>
+            </div>
+            <div className="space-y-3 text-xs md:text-sm text-muted-foreground">
+              <p className="font-semibold text-foreground">Highlights</p>
+              <ul className="space-y-1">
+                <li>End-to-end hackathon design &amp; execution</li>
+                <li>Global participation and media visibility</li>
+                <li>Benchmark for hackathon management Middle East</li>
+              </ul>
+            </div>
+          </Card>
         </div>
       </section>
 
-      {/* Corporate & Government Ceremonies */}
-      <section className="py-20">
+      {/* Case Study 2 — Google MENA Developer Ecosystem */}
+      <section className="bg-secondary py-14 md:py-16 border-b border-border/60">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-primary mb-12 text-center">Corporate & Government Ceremonies</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {ceremonies.map((item, i) => (
-              <Card key={i} className="p-8 hover:border-accent transition-all flex items-center gap-6">
-                <div className="bg-secondary p-4 rounded-full">
-                  <Zap className="text-primary" size={32} />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-primary mb-2">{item.name}</h3>
-                  <p className="text-muted-foreground">{item.detail}</p>
-                </div>
-              </Card>
-            ))}
-          </div>
+          <Card className="p-6 md:p-8 grid gap-6 md:grid-cols-[1.4fr,1fr] items-start border border-border/80 bg-white">
+            <div className="space-y-3">
+              <div className="inline-flex items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
+                <Target className="h-3 w-3 text-primary" />
+                Case Study 2
+              </div>
+              <h2 className="text-xl md:text-2xl font-bold text-primary">
+                Google MENA Developer Ecosystem
+              </h2>
+              <p className="text-xs md:text-sm font-semibold text-muted-foreground">
+                Client: Google (Internal)
+              </p>
+              <p className="text-sm text-muted-foreground">
+                As Google&apos;s Head of MENA Ecosystem, iXL&apos;s founder led a multi-year
+                transformation of the developer ecosystem across the region.
+              </p>
+              <ul className="space-y-2 text-xs md:text-sm text-muted-foreground">
+                <li>
+                  <span className="font-semibold text-foreground">Challenge:</span> Scale developer
+                  training and community engagement across diverse MENA markets.
+                </li>
+                <li>
+                  <span className="font-semibold text-foreground">Result:</span> From 16K developers
+                  (2016) to 750K trained annually (2021); over 500 communities built across 17
+                  countries, supported by thousands of tech events.
+                </li>
+              </ul>
+            </div>
+            <div className="space-y-3 text-xs md:text-sm text-muted-foreground">
+              <p className="font-semibold text-foreground">Highlights</p>
+              <ul className="space-y-1">
+                <li>Developer community MENA architecture and scaling</li>
+                <li>Blended online/offline learning programs</li>
+                <li>Foundation for later AI and cloud adoption programs</li>
+              </ul>
+            </div>
+          </Card>
         </div>
       </section>
 
-      {/* Ecosystem Roadshows & Diversity */}
-      <section className="bg-secondary py-20">
-        <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-16">
-
-          {/* Roadshows */}
-          <div>
-            <h3 className="text-3xl font-bold text-primary mb-8 flex items-center gap-3">
-              <Globe className="text-accent" />
-              Ecosystem Roadshows
-            </h3>
-            <div className="space-y-6">
-              {roadshows.map((item, i) => (
-                <div key={i} className="bg-white p-6 rounded-lg shadow-sm">
-                  <h4 className="text-xl font-bold text-foreground mb-2">{item.name}</h4>
-                  <p className="text-muted-foreground">{item.detail}</p>
-                </div>
-              ))}
+      {/* Case Study 3 — AI Hack Africa */}
+      <section className="bg-white py-14 md:py-16 border-b border-border/60">
+        <div className="container mx-auto px-4">
+          <Card className="p-6 md:p-8 grid gap-6 md:grid-cols-[1.4fr,1fr] items-start border border-border/80">
+            <div className="space-y-3">
+              <div className="inline-flex items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
+                <Award className="h-3 w-3 text-primary" />
+                Case Study 3
+              </div>
+              <h2 className="text-xl md:text-2xl font-bold text-primary">
+                AI Hack Africa — Continent-Wide Innovation Competition
+              </h2>
+              <p className="text-xs md:text-sm font-semibold text-muted-foreground">
+                Client: Pan-African Innovation Initiative
+              </p>
+              <p className="text-sm text-muted-foreground">
+                iXL supported the design and execution of AI Hack Africa, one of the largest AI
+                competitions in the continent.
+              </p>
+              <ul className="space-y-2 text-xs md:text-sm text-muted-foreground">
+                <li>
+                  <span className="font-semibold text-foreground">Challenge:</span> Run a
+                  continent-wide AI innovation competition that could attract top talent and global
+                  partners.
+                </li>
+                <li>
+                  <span className="font-semibold text-foreground">Result:</span> 1,000+ participants
+                  across multiple countries — an Africa record, with editions in 2019 and 2022.
+                </li>
+              </ul>
             </div>
-          </div>
-
-          {/* Diversity */}
-          <div>
-            <h3 className="text-3xl font-bold text-primary mb-8 flex items-center gap-3">
-              <Users className="text-accent" />
-              Diversity & Inclusion
-            </h3>
-            <div className="space-y-6">
-              {diversity.map((item, i) => (
-                <div key={i} className="bg-white p-6 rounded-lg shadow-sm">
-                  <h4 className="text-xl font-bold text-foreground mb-2">{item.name}</h4>
-                  <p className="text-muted-foreground">{item.detail}</p>
-                </div>
-              ))}
+            <div className="space-y-3 text-xs md:text-sm text-muted-foreground">
+              <p className="font-semibold text-foreground">Highlights</p>
+              <ul className="space-y-1">
+                <li>Pan-African positioning and outreach</li>
+                <li>AI-focused curriculum and mentorship</li>
+                <li>Sustained ecosystem engagement over multiple years</li>
+              </ul>
             </div>
-          </div>
-
+          </Card>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-primary text-white py-20">
+      {/* Case Study 4 — Oman Ideathon */}
+      <section className="bg-secondary py-14 md:py-16 border-b border-border/60">
+        <div className="container mx-auto px-4">
+          <Card className="p-6 md:p-8 grid gap-6 md:grid-cols-[1.4fr,1fr] items-start border border-border/80 bg-white">
+            <div className="space-y-3">
+              <div className="inline-flex items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
+                <Target className="h-3 w-3 text-primary" />
+                Case Study 4
+              </div>
+              <h2 className="text-xl md:text-2xl font-bold text-primary">
+                Oman Ideathon — National-Scale Innovation Platform
+              </h2>
+              <p className="text-xs md:text-sm font-semibold text-muted-foreground">
+                Client: Oman Government
+              </p>
+              <p className="text-sm text-muted-foreground">
+                A national-scale ideathon designed to surface, validate, and accelerate local
+                innovation talent.
+              </p>
+              <ul className="space-y-2 text-xs md:text-sm text-muted-foreground">
+                <li>
+                  <span className="font-semibold text-foreground">Challenge:</span> Create a
+                  high-visibility ideathon that could attract and support innovators nationwide.
+                </li>
+                <li>
+                  <span className="font-semibold text-foreground">Result:</span> 1,000+ participants
+                  in 2018, establishing one of the region&apos;s most visible innovation events.
+                </li>
+              </ul>
+            </div>
+            <div className="space-y-3 text-xs md:text-sm text-muted-foreground">
+              <p className="font-semibold text-foreground">Highlights</p>
+              <ul className="space-y-1">
+                <li>National branding and engagement strategy</li>
+                <li>Structured idea evaluation and follow-up</li>
+                <li>Model for subsequent innovation events in the region</li>
+              </ul>
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      {/* Case Study 5 — MENA Startup Ecosystem (Google for Startups) */}
+      <section className="bg-white py-14 md:py-16 border-b border-border/60">
+        <div className="container mx-auto px-4">
+          <Card className="p-6 md:p-8 grid gap-6 md:grid-cols-[1.4fr,1fr] items-start border border-border/80">
+            <div className="space-y-3">
+              <div className="inline-flex items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
+                <Globe2 className="h-3 w-3 text-primary" />
+                Case Study 5
+              </div>
+              <h2 className="text-xl md:text-2xl font-bold text-primary">
+                MENA Startup Ecosystem — Google for Startups
+              </h2>
+              <p className="text-xs md:text-sm font-semibold text-muted-foreground">
+                Client: Google for Startups / Ecosystem Partners
+              </p>
+              <p className="text-sm text-muted-foreground">
+                iXL leadership contributed to building and scaling the MENA startup ecosystem under
+                the Google for Startups umbrella.
+              </p>
+              <ul className="space-y-2 text-xs md:text-sm text-muted-foreground">
+                <li>
+                  <span className="font-semibold text-foreground">Result:</span> Launched MENA
+                  Google for Startups presence; primary Saudi partner for The Garage Accelerator;
+                  launched Oman SaaS Accelerator and Algeria Venture Accelerator.
+                </li>
+              </ul>
+            </div>
+            <div className="space-y-3 text-xs md:text-sm text-muted-foreground">
+              <p className="font-semibold text-foreground">Highlights</p>
+              <ul className="space-y-1">
+                <li>Multi-country accelerator and ecosystem design</li>
+                <li>Deep integration with national innovation agendas</li>
+                <li>Long-term pipeline building for founders and investors</li>
+              </ul>
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      {/* Case Study 6 — Enterprise M&A Integration */}
+      <section className="bg-secondary py-14 md:py-16">
+        <div className="container mx-auto px-4">
+          <Card className="p-6 md:p-8 grid gap-6 md:grid-cols-[1.4fr,1fr] items-start border border-border/80 bg-white">
+            <div className="space-y-3">
+              <div className="inline-flex items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
+                <Target className="h-3 w-3 text-primary" />
+                Case Study 6
+              </div>
+              <h2 className="text-xl md:text-2xl font-bold text-primary">
+                Enterprise M&amp;A Integration — Processes, Culture, and Visibility
+              </h2>
+              <p className="text-xs md:text-sm font-semibold text-muted-foreground">
+                Context: Qualcomm (Atheros acquisition), Google, Nest
+              </p>
+              <p className="text-sm text-muted-foreground">
+                iXL&apos;s leadership managed complex cultural and operational mergers post-M&amp;A
+                across multiple Fortune 500 environments.
+              </p>
+              <ul className="space-y-2 text-xs md:text-sm text-muted-foreground">
+                <li>
+                  <span className="font-semibold text-foreground">Challenge:</span> Align conflicting
+                  organizational cultures, systems, and processes while maintaining delivery
+                  velocity.
+                </li>
+                <li>
+                  <span className="font-semibold text-foreground">Result:</span> Established agile
+                  processes, OKR frameworks, and visibility systems across functions, enabling
+                  smoother integration and faster value realization.
+                </li>
+              </ul>
+            </div>
+            <div className="space-y-3 text-xs md:text-sm text-muted-foreground">
+              <p className="font-semibold text-foreground">Highlights</p>
+              <ul className="space-y-1">
+                <li>Applied chief-of-staff style integration leadership</li>
+                <li>Unified performance and reporting frameworks</li>
+                <li>Blueprint for future M&amp;A playbooks</li>
+              </ul>
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      {/* Bottom CTA */}
+      <section className="bg-primary text-primary-foreground py-16 md:py-20">
         <div className="container mx-auto px-4 text-center space-y-6">
-          <h2 className="text-4xl font-bold">Ready to Be Part of Our Success Story?</h2>
-          <p className="text-lg text-blue-100 max-w-2xl mx-auto">
-            Join hundreds of organizations and thousands of professionals who have benefited from our expertise and guidance.
+          <h2 className="text-3xl md:text-4xl font-bold">
+            Want results like these? Let&apos;s talk.
+          </h2>
+          <p className="text-sm md:text-base text-primary-foreground/80 max-w-2xl mx-auto">
+            Whether you&apos;re designing a national-scale program, transforming a corporate
+            portfolio, or integrating a major acquisition, iXL can help architect and execute the
+            journey.
           </p>
           <Link href="/contact">
-            <a className="bg-accent text-white px-8 py-3 rounded-lg hover:bg-blue-400 transition-all inline-flex items-center gap-2">
-              Start Your Journey
-              <ArrowRight size={20} />
+            <a className="inline-flex items-center gap-2 rounded-lg bg-[#C9A84C] px-8 py-3 text-sm font-semibold text-[#050922] hover:bg-[#b2903f] transition-colors">
+              Contact Us
+              <ArrowRight className="h-4 w-4" />
             </a>
           </Link>
         </div>
       </section>
 
-      import {Footer} from "@/components/Footer";
-
-      {/* Footer */}
       <Footer />
     </div>
   );
 }
+

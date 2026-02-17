@@ -1,272 +1,276 @@
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
-import { Link } from "wouter";
+import { Mail, Linkedin, Youtube, Send, ListChecks } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-
 import { useState } from "react";
-
-/**
- * Design Philosophy: Professional Minimalism with Strategic Blue Accents
- * - Clear contact information and multiple ways to reach out
- * - Contact form with professional styling
- * - Responsive layout for easy navigation
- */
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    subject: "",
-    message: ""
+    fullName: "",
+    organization: "",
+    role: "",
+    country: "",
+    service: "",
+    message: "",
   });
 
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
+  ) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, this would send the form data to a server
-    console.log("Form submitted:", formData);
+    console.log("Contact form submitted:", formData);
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
-      setFormData({ name: "", email: "", company: "", subject: "", message: "" });
+      setFormData({
+        fullName: "",
+        organization: "",
+        role: "",
+        country: "",
+        service: "",
+        message: "",
+      });
     }, 3000);
   };
 
-
-
   return (
-    <div className="min-h-screen bg-white">
-      {/* Navigation */}
+    <div className="min-h-screen bg-background text-foreground">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="bg-secondary py-20">
-        <div className="container mx-auto px-4 text-center space-y-6">
-          <h1 className="text-5xl font-bold text-primary">Get in Touch</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Have a question or ready to discuss your next project? We would love to hear from you. Contact us today to schedule a free consultation.
-          </p>
-        </div>
-      </section>
-
-      {/* Contact Information */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-3 gap-8 mb-20">
-            <Card className="p-8 text-center hover:shadow-lg transition-all">
-              <Mail className="text-primary mx-auto mb-4" size={32} />
-              <h3 className="text-2xl font-bold text-primary mb-3">Email</h3>
-              <p className="text-muted-foreground mb-2">Send us an email anytime</p>
-              <a href="mailto:Salim@ixlconsulting.tech" className="text-accent font-semibold hover:underline">
-                Salim@ixlconsulting.tech
-              </a>
-            </Card>
-
-            <Card className="p-8 text-center hover:shadow-lg transition-all">
-              <Clock className="text-primary mx-auto mb-4" size={32} />
-              <h3 className="text-2xl font-bold text-primary mb-3">Response Time</h3>
-              <p className="text-muted-foreground mb-2">We typically respond within</p>
-              <p className="text-accent font-semibold">24 business hours</p>
-            </Card>
-
-            <Card className="p-8 text-center hover:shadow-lg transition-all">
-              <MapPin className="text-primary mx-auto mb-4" size={32} />
-              <h3 className="text-2xl font-bold text-primary mb-3">Global Presence</h3>
-              <p className="text-muted-foreground">Operating across</p>
-              <p className="text-accent font-semibold">17 countries</p>
-            </Card>
+      {/* Section 1 — Intro */}
+      <section className="bg-secondary py-16 md:py-20 border-b border-border/60">
+        <div className="container mx-auto px-4 space-y-5">
+          <div className="max-w-3xl space-y-3">
+            <h1 className="text-3xl md:text-4xl font-bold text-primary">
+              Let&apos;s Build Something Transformational
+            </h1>
+            <p className="text-sm md:text-base text-muted-foreground">
+              Whether you&apos;re exploring a partnership, need AI strategy support, or want to discuss a Chief
+              of Staff engagement — we&apos;d love to hear from you. Phase A discovery is offered at no cost.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Contact Form Section */}
-      <section className="bg-secondary py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-primary mb-4">Send us a Message</h2>
-              <p className="text-lg text-muted-foreground">
-                Fill out the form below and we will get back to you as soon as possible.
-              </p>
-            </div>
-
-            <Card className="p-8">
+      {/* Section 2 — Contact Form */}
+      <section className="bg-white py-16 md:py-20 border-b border-border/60">
+        <div className="container mx-auto px-4 grid gap-10 lg:grid-cols-[1.5fr,1fr] items-start">
+          <div className="max-w-xl">
+            <h2 className="text-xl md:text-2xl font-semibold text-primary mb-4">
+              Tell Us About Your Mandate
+            </h2>
+            <Card className="p-6 md:p-7">
               {submitted ? (
-                <div className="text-center py-12">
-                  <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg mb-4">
-                    <p className="font-semibold">Thank you for your message!</p>
-                    <p>We will get back to you shortly.</p>
+                <div className="text-center py-8">
+                  <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg inline-block">
+                    <p className="font-semibold">Thank you for your message.</p>
+                    <p className="text-sm">We&apos;ll get back to you within 24 business hours.</p>
                   </div>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-2 gap-6">
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  <div className="grid gap-4 md:grid-cols-2">
                     <div>
-                      <label className="block text-foreground font-semibold mb-2">Full Name *</label>
+                      <label className="block text-xs font-semibold text-foreground mb-1.5">
+                        Full Name *
+                      </label>
                       <input
                         type="text"
-                        name="name"
-                        value={formData.name}
+                        name="fullName"
+                        value={formData.fullName}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                        className="w-full px-3 py-2.5 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
                         placeholder="Your name"
                       />
                     </div>
                     <div>
-                      <label className="block text-foreground font-semibold mb-2">Email *</label>
+                      <label className="block text-xs font-semibold text-foreground mb-1.5">
+                        Organization / Company
+                      </label>
                       <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
+                        type="text"
+                        name="organization"
+                        value={formData.organization}
                         onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                        placeholder="your@email.com"
+                        className="w-full px-3 py-2.5 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                        placeholder="Your organization"
                       />
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-6">
+                  <div className="grid gap-4 md:grid-cols-2">
                     <div>
-                      <label className="block text-foreground font-semibold mb-2">Company</label>
+                      <label className="block text-xs font-semibold text-foreground mb-1.5">
+                        Role / Title
+                      </label>
                       <input
                         type="text"
-                        name="company"
-                        value={formData.company}
+                        name="role"
+                        value={formData.role}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                        placeholder="Your company"
+                        className="w-full px-3 py-2.5 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                        placeholder="Your role"
                       />
                     </div>
                     <div>
-                      <label className="block text-foreground font-semibold mb-2">Subject *</label>
-                      <select
-                        name="subject"
-                        value={formData.subject}
+                      <label className="block text-xs font-semibold text-foreground mb-1.5">
+                        Country
+                      </label>
+                      <input
+                        type="text"
+                        name="country"
+                        value={formData.country}
                         onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                      >
-                        <option value="">Select a subject</option>
-                        <option value="startup-advisory">Startup Advisory</option>
-                        <option value="workshops">Workshops & Training</option>
-                        <option value="ai-solutions">AI Solutions</option>
-                        <option value="speaker-agency">Speaker Agency</option>
-                        <option value="other">Other</option>
-                      </select>
+                        className="w-full px-3 py-2.5 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                        placeholder="e.g., Saudi Arabia"
+                      />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-foreground font-semibold mb-2">Message *</label>
+                    <label className="block text-xs font-semibold text-foreground mb-1.5">
+                      Service of Interest *
+                    </label>
+                    <select
+                      name="service"
+                      value={formData.service}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-3 py-2.5 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                    >
+                      <option value="">Select a service</option>
+                      <option value="chief-of-staff">Chief of Staff &amp; Agile</option>
+                      <option value="innovation-transformation">Innovation Transformation</option>
+                      <option value="ai-transformation">AI Transformation</option>
+                      <option value="training-talent">Training &amp; Talent</option>
+                      <option value="external-partnerships">External Partnerships</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-foreground mb-1.5">
+                      Message *
+                    </label>
                     <textarea
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
                       required
                       rows={6}
-                      className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                      placeholder="Tell us about your project or inquiry..."
-                    ></textarea>
+                      className="w-full px-3 py-2.5 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                      placeholder="Share a bit about your context, objectives, and timeline..."
+                    />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full bg-primary text-white px-8 py-3 rounded-lg hover:bg-blue-900 transition-all font-semibold flex items-center justify-center gap-2"
+                    className="w-full bg-primary text-white px-6 py-3 rounded-lg hover:bg-[#101a3b] transition-colors text-sm font-semibold flex items-center justify-center gap-2"
                   >
                     Send Message
-                    <Send size={20} />
+                    <Send className="h-4 w-4" />
                   </button>
                 </form>
               )}
             </Card>
           </div>
-        </div>
-      </section>
 
-      {/* Services Overview */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-primary mb-12 text-center">What Can We Help You With?</h2>
-
-          <div className="grid grid-cols-2 gap-8">
-            <Card className="p-8 hover:shadow-lg transition-all hover:border-accent cursor-pointer">
-              <h3 className="text-2xl font-bold text-primary mb-3">Startup Advisory</h3>
-              <p className="text-muted-foreground mb-4">
-                Looking to accelerate your startup? We provide end-to-end advisory services for incubators and accelerator programs.
-              </p>
-              <a href="mailto:Salim@ixlconsulting.tech" className="text-accent font-semibold hover:underline inline-flex items-center gap-2">
-                Inquire Now →
-              </a>
+          {/* Section 3 — Direct Contact */}
+          <div className="space-y-6">
+            <Card className="p-6 md:p-7 space-y-4">
+              <h2 className="text-base md:text-lg font-semibold text-primary">
+                Prefer Direct Contact?
+              </h2>
+              <div className="space-y-3 text-sm text-muted-foreground">
+                <p>
+                  <span className="font-semibold text-foreground">Email:</span>{" "}
+                  <a
+                    href="mailto:salim@ixlconsulting.tech"
+                    className="text-[#2E86AB] hover:underline"
+                  >
+                    salim@ixlconsulting.tech
+                  </a>
+                </p>
+                <p className="flex items-center gap-2">
+                  <Linkedin className="h-4 w-4 text-primary" />
+                  <span>
+                    LinkedIn:{" "}
+                    <span className="font-semibold text-foreground">
+                      Salim Abid
+                    </span>
+                  </span>
+                </p>
+                <p className="flex items-center gap-2">
+                  <Youtube className="h-4 w-4 text-primary" />
+                  <span>
+                    YouTube:{" "}
+                    <span className="font-semibold text-foreground">
+                      devMENA Channel — 95K+ subscribers
+                    </span>
+                  </span>
+                </p>
+              </div>
             </Card>
 
-            <Card className="p-8 hover:shadow-lg transition-all hover:border-accent cursor-pointer">
-              <h3 className="text-2xl font-bold text-primary mb-3">Workshops & Training</h3>
-              <p className="text-muted-foreground mb-4">
-                Need to upskill your team? We offer specialized workshops in Design Thinking, OKR, Agile, AI, and more.
-              </p>
-              <a href="mailto:Salim@ixlconsulting.tech" className="text-accent font-semibold hover:underline inline-flex items-center gap-2">
-                Inquire Now →
-              </a>
-            </Card>
-
-            <Card className="p-8 hover:shadow-lg transition-all hover:border-accent cursor-pointer">
-              <h3 className="text-2xl font-bold text-primary mb-3">AI Solutions</h3>
-              <p className="text-muted-foreground mb-4">
-                Transform your business with AI. We provide AI agents for content generation, customer support, and more.
-              </p>
-              <a href="mailto:Salim@ixlconsulting.tech" className="text-accent font-semibold hover:underline inline-flex items-center gap-2">
-                Inquire Now →
-              </a>
-            </Card>
-
-            <Card className="p-8 hover:shadow-lg transition-all hover:border-accent cursor-pointer">
-              <h3 className="text-2xl font-bold text-primary mb-3">Speaker Agency</h3>
-              <p className="text-muted-foreground mb-4">
-                Looking for expert speakers? We connect you with MENA's top tech experts for your events.
-              </p>
-              <a href="mailto:Salim@ixlconsulting.tech" className="text-accent font-semibold hover:underline inline-flex items-center gap-2">
-                Inquire Now →
-              </a>
+            {/* Section 4 — Engagement Model Reminder */}
+            <Card className="p-6 md:p-7 space-y-4 bg-secondary/40 border border-border/80">
+              <h3 className="text-sm font-semibold text-primary">
+                How Our Engagement Model Works
+              </h3>
+              <ol className="space-y-3 text-xs md:text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="mt-0.5 font-semibold text-foreground">1.</span>
+                  <span>
+                    <span className="font-semibold text-foreground">
+                      Send a message or email
+                    </span>{" "}
+                    with your context, objectives, and timelines.
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-0.5 font-semibold text-foreground">2.</span>
+                  <span>
+                    <span className="font-semibold text-foreground">
+                      Free Phase A discovery
+                    </span>{" "}
+                    — typically 4–5 days onsite with leadership plus 3–4 weeks of quick-win implementation.
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-0.5 font-semibold text-foreground">3.</span>
+                  <span>
+                    <span className="font-semibold text-foreground">
+                      Formalize a partnership
+                    </span>{" "}
+                    that works for both sides, based on clear results and a shared roadmap.
+                  </span>
+                </li>
+              </ol>
+              <div className="pt-1">
+                <p className="text-[11px] text-muted-foreground">
+                  Phase A is offered at no cost as a partnership exploration — we prove value before asking you to
+                  commit.
+                </p>
+              </div>
             </Card>
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="bg-primary text-white py-20">
-        <div className="container mx-auto px-4 text-center space-y-6">
-          <h2 className="text-4xl font-bold">Let's Start a Conversation</h2>
-          <p className="text-lg text-blue-100 max-w-2xl mx-auto">
-            Whether you have a specific project in mind or just want to explore possibilities, we are here to help.
-          </p>
-          <a
-            href="mailto:Salim@ixlconsulting.tech"
-            className="bg-accent text-white px-8 py-3 rounded-lg hover:bg-blue-400 transition-all inline-flex items-center gap-2"
-          >
-            Email Us Now
-            <Mail size={20} />
-          </a>
-        </div>
-      </section>
-
-      import {Footer} from "@/components/Footer";
 
       {/* Footer */}
       <Footer />
     </div>
   );
 }
+
