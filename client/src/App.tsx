@@ -8,12 +8,16 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Projects from "./pages/Projects";
+import Partners from "./pages/Partners";
 import Contact from "./pages/Contact";
-
+import Insights from "./pages/Insights";
+import ServiceChiefOfStaff from "./pages/ServiceChiefOfStaff";
+import ServiceInnovation from "./pages/ServiceInnovation";
+import ServiceAiTransformation from "./pages/ServiceAiTransformation";
+import ServiceTrainingTalent from "./pages/ServiceTrainingTalent";
+import ServiceExternalGrowth from "./pages/ServiceExternalGrowth";
 
 import ScrollToTop from "./components/ScrollToTop";
-import ComingSoon from "./pages/ComingSoon";
-import Events from "./pages/Events";
 
 function Router() {
   return (
@@ -24,9 +28,14 @@ function Router() {
         <Route path={"/about"} component={About} />
         <Route path={"/services"} component={Services} />
         <Route path={"/projects"} component={Projects} />
+        <Route path={"/partners"} component={Partners} />
+        <Route path={"/services/chief-of-staff"} component={ServiceChiefOfStaff} />
+        <Route path={"/services/innovation-transformation"} component={ServiceInnovation} />
+        <Route path={"/services/ai-transformation"} component={ServiceAiTransformation} />
+        <Route path={"/services/training-talent"} component={ServiceTrainingTalent} />
+        <Route path={"/services/external-growth-partnerships"} component={ServiceExternalGrowth} />
+        <Route path={"/insights"} component={Insights} />
         <Route path={"/contact"} component={Contact} />
-        <Route path={"/coming-soon"} component={ComingSoon} />
-        <Route path={"/events"} component={Events} />
         <Route path={"/404"} component={NotFound} />
         {/* Final fallback route */}
         <Route component={NotFound} />

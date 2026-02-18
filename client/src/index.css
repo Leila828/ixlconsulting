@@ -46,15 +46,15 @@
 }
 
 :root {
-  /* iXL Consulting Color Palette */
-  /* Primary: Deep Professional Blue (#003D82) */
-  --primary: #003D82;
+  /* iXL Consulting 2026 Color Palette */
+  /* Primary: Deep Navy Blue (#1B2B5E) */
+  --primary: #1B2B5E;
   --primary-foreground: #FFFFFF;
   --sidebar-primary: #003D82;
   --sidebar-primary-foreground: #FFFFFF;
   
-  /* Accent: Vibrant Teal (#00A8CC) */
-  --accent: #00A8CC;
+  /* Accent: Teal / Medium Blue (#2E86AB) */
+  --accent: #2E86AB;
   --accent-foreground: #FFFFFF;
   
   /* Secondary: Light Slate Gray (#F5F7FA) */

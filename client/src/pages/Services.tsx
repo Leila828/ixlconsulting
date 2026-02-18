@@ -1,191 +1,373 @@
 import { Card } from "@/components/ui/card";
-import { ArrowRight, CheckCircle2, Zap, BookOpen, Lightbulb, Mic2, Users, Target, Rocket, Database } from "lucide-react";
-import { Link } from "wouter";
+import { ArrowRight, Brain, Globe2, ListChecks, Target, Users } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import cst from "../pages/images/cst.png";
-
-
-/**
- * Design Philosophy: Professional Minimalism with Strategic Blue Accents
- * - Comprehensive service descriptions with clear benefits
- * - Service cards with hover effects and visual hierarchy
- * - Feature lists with checkmarks for easy scanning
- */
+import { Link } from "wouter";
+import { useEffect } from "react";
 
 export default function Services() {
-  const services = [
-    {
-      id: "startup-sme",
-      icon: Rocket,
-      title: "Startup & SME Support",
-      subtitle: "Incubator & Accelerator Enablement",
-      description: "End-to-end support for incubators and accelerator programs, either live or online. We empower startups from concept to launch.",
-      features: [
-        "Incubator/Accelerator Enablement: End-to-end program support",
-        "Workshops: Design Thinking (Concept to launch, UX, User testing)",
-        "OKR Training: Goal-setting frameworks for 10x efficiency",
-        "Agile & Dev Tools: Scrum/Kanban ceremonies & Jira/Trello setup",
-        "Founders workshops: Leadership and management",
-        "VC access / investment strategies"
-      ],
-      image: "https://private-us-east-1.manuscdn.com/sessionFile/oYFFpjOZw6xBeFolfWacx1/sandbox/zfrbPK58od4c6rOr9VvWtp-img-2_1770929369000_na1fn_c3RhcnR1cC1pbm5vdmF0aW9u.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvb1lGRnBqT1p3NnhCZUZvbGZXYWN4MS9zYW5kYm94L3pmcmJQSzU4b2Q0YzZyT3I5VnZXdHAtaW1nLTJfMTc3MDkyOTM2OTAwMF9uYTFmbl9jM1JoY25SMWNDMXBibTV2ZG1GMGFXOXUuanBnP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=XfqzvKzodeoNtWvi~~-R8xiVnSi9t8cxEqoFBQ3gbmqA3m~Swpht7fMGzcHbkkUN2wGJgL35Pel6q-9742tgMYeH7MfR14jqCc1~MvUqzF9vsQxqlK8kRui2baVK0T5aShjIZ~JmEnZYG4008TJEqvdybYoc0kEwaOfPE52Ib1tn4hUbh5YlKMqxfa~zQpgPOhu9-AV7RlwnCqoUphs56Hau4Rd1KYtChm92uNzNQyq7ESaG7T8mnDp9Yye8s2ZgJQZ9Q8t1YEXGbgAsfVZVhp137vJfGa91ekgWFFsqoBQR8JBkLp9r0nBbU65hi4GNXbN6Gz1ayGXJ2bAUvDTrFg__"
-    },
-    {
-      id: "event-hackathon",
-      icon: Mic2,
-      title: "Event & Hackathon Organization",
-      subtitle: "End-to-End Event Management & Production",
-      description: "We create unforgettable experiences by handling every aspect of your event, from content and speakers to logistics and cutting-edge technology.",
-      features: [
-        "Content Creation: Tailoring engaging narratives and themes",
-        "Speaker Management: Selection, logistics, and coordination",
-        "Speaker Training: Professional rehearsals and public speaking coaching",
-        "Hackathon Management: Promotion, registration, and submission growth",
-        "Tech Mentorship: Expert guidance across all technical fields",
-        "Hologram Shows: Production and management of immersive holographic displays"
-      ],
-      image: cst
-    },
-    {
-      id: "emerging-tech",
-      icon: Database,
-      title: "Emerging Tech & AI Products",
-      subtitle: "Cutting-Edge Automation & Intelligence",
-      description: "Leverage advanced technology to automate content creation, customer interactions, and business intelligence with our AI solutions.",
-      features: [
-        "AI Agent: Automated content creation & video generation",
-        "Real-time interactivity for support and e-learning",
-        "Lead Generation: AI-driven data insights",
-        "Tech Solutions: Solution Architecture Review",
-        "Full Stack Development services",
-        "AI Software Production (Prototype Development)"
-      ],
-      image: "https://private-us-east-1.manuscdn.com/sessionFile/oYFFpjOZw6xBeFolfWacx1/sandbox/zfrbPK58od4c6rOr9VvWtp-img-5_1770929370000_na1fn_YWktdGVjaG5vbG9neQ.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvb1lGRnBqT1p3NnhCZUZvbGZXYWN4MS9zYW5kYm94L3pmcmJQSzU4b2Q0YzZyT3I5VnZXdHAtaW1nLTVfMTc3MDkyOTM3MDAwMF9uYTFmbl9ZV2t0ZEdWamFHNXZiRzluZVEuanBnP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=ok0L6jgKc0qj6dIyqvxitUtubek8TfjYPk3j5onI5jX4tJAa3XXeXGQ4C6NMe4svTCba~ERWhQsKpC~mSXbUim9J3jVFaDH8pRV7nFdfHKH9kKbCcEQjgs8wbiJHCDV-J6t0ceDDt-LXXPCi~5bkbGNU9URK1BzZh0J81AdfHfAikvuDyf0nvacktB0oA3q~QmKDCzdj8tn4rN1Mk51rHQlZQjKFZJTefz-0UPMlk4tiJ7FbR5tMRO0Egv25OTn1g7EwOFUIt2bQxmM2DoYTPGbOWXE9xhIa9f3KeeG3nj4qJEFrPoexITN7XXASnbDZEsyUArTqaR2ky45CrLJo3w__"
-    },
-    {
-      id: "career-talent",
-      icon: Users,
-      title: "Career & Talent Development",
-      subtitle: "Connecting Experts & Upskilling Talent",
-      description: "Bridging the gap between talent and opportunity through specialized tracks and our expert speaker network.",
-      features: [
-        "Resume Building: ATS-friendly, professional optimization",
-        "Employability Series: Custom tracks (E.101 to E.501)",
-        "Speaker Agency: Connecting with top MENA experts",
-        "Expertise in AI, Cyber Security, FinTech, Blockchain",
-        "M&A & Strategic Partnerships support",
-        "E-Learning: Free tech platform via bamboogeeks.dev"
-      ],
-      image: "https://private-us-east-1.manuscdn.com/sessionFile/oYFFpjOZw6xBeFolfWacx1/sandbox/zfrbPK58od4c6rOr9VvWtp-img-4_1770929369000_na1fn_d29ya3Nob3AtdHJhaW5pbmc.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvb1lGRnBqT1p3NnhCZUZvbGZXYWN4MS9zYW5kYm94L3pmcmJQSzU4b2Q0YzZyT3I5VnZXdHAtaW1nLTRfMTc3MDkyOTM2OTAwMF9uYTFmbl9kMjl5YTNOb2IzQXRkSEpoYVc1cGJtYy5qcGc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=RvkFXbShtOXvVrH0bdTbOCDc1dvHRkkEYKAIZSdg6pbuOX81oGiijcX-QGe~Liuv57shcDUqXXQd1lpnKLO9zJ0JGkqfiJrsIaAlFQ~tCVGsLsafNeK1LQtA6A5jjNTdGiB~2-lYqmhi1QcZea7Vghwyhuq7gCbywFY29qkdTyzVeaBaNRYyizqdmVExOj~ckkz5jEZPm3~lRbxUMb9rzAS6oSYvrmddCL3qLeFrXK-lGpOXyHZFHP1ios1FgOwpWGEj86uygNeFo5XzeUPnTR0uW7NAFr85~bnpH5o~-m6qQfrBOrsdLliSymNy8H-CoTuuDmRm8s6Zmy5MxifHSQ__"
-    },
-
-  ];
-
-
+  useEffect(() => {
+    const scrollToHash = () => {
+      const hash = window.location.hash.slice(1);
+      if (hash) {
+        const el = document.getElementById(hash);
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    };
+    scrollToHash();
+    window.addEventListener("hashchange", scrollToHash);
+    return () => window.removeEventListener("hashchange", scrollToHash);
+  }, []);
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Navigation */}
+    <div className="min-h-screen bg-background text-foreground">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="bg-secondary py-20">
-        <div className="container mx-auto px-4 text-center space-y-6">
-          <h1 className="text-5xl font-bold text-primary">Our Services</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Comprehensive consulting solutions designed to accelerate growth, drive innovation, and empower organizations across the MENA region and beyond.
-          </p>
-        </div>
-      </section>
-
-      {/* Services */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 space-y-20">
-          {services.map((service, index) => {
-            const Icon = service.icon;
-            const isEven = index % 2 === 0;
-            return (
-              <div key={service.id} className="grid grid-cols-2 gap-12 items-center">
-                <div className={isEven ? "order-1" : "order-2"}>
-                  <div className="flex items-start gap-4 mb-4">
-                    <Icon className="text-primary mt-1" size={32} />
-                    <div>
-                      <p className="text-accent font-semibold text-sm uppercase tracking-wide">{service.subtitle}</p>
-                      <h2 className="text-3xl font-bold text-primary">{service.title}</h2>
-                    </div>
-                  </div>
-                  <p className="text-lg text-muted-foreground mb-6">{service.description}</p>
-                  <div className="space-y-3 mb-8">
-                    {service.features.map((feature, i) => (
-                      <div key={i} className="flex items-start gap-3">
-                        <CheckCircle2 size={20} className="text-accent mt-1 flex-shrink-0" />
-                        <span className="text-foreground">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <a href="/contact" className="bg-primary text-white px-6 py-3 rounded-lg hover:bg-blue-900 transition-all inline-flex items-center gap-2">
-                    Learn More
-                    <ArrowRight size={20} />
-                  </a>
-                </div>
-                <div className={isEven ? "order-2" : "order-1"}>
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="rounded-lg shadow-lg w-full h-auto object-cover"
-                  />
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="bg-secondary py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-primary mb-12 text-center">Why Choose iXL Consulting?</h2>
-          <div className="grid grid-cols-3 gap-8">
-            <Card className="p-8">
-              <Users className="text-primary mb-4" size={32} />
-              <h3 className="text-2xl font-bold text-primary mb-3">Expert Team</h3>
-              <p className="text-muted-foreground">Our team brings decades of combined experience in startup acceleration, digital transformation, and innovation.</p>
-            </Card>
-            <Card className="p-8">
-              <Zap className="text-primary mb-4" size={32} />
-              <h3 className="text-2xl font-bold text-primary mb-3">Proven Track Record</h3>
-              <p className="text-muted-foreground">We have trained 750K+ developers, accelerated 1000+ startups, and built 500+ communities across 17 countries.</p>
-            </Card>
-            <Card className="p-8">
-              <Target className="text-primary mb-4" size={32} />
-              <h3 className="text-2xl font-bold text-primary mb-3">Results-Driven</h3>
-              <p className="text-muted-foreground">We focus on delivering measurable results and sustainable growth for our clients and partners.</p>
-            </Card>
+      {/* Overview Intro */}
+      <section className="bg-secondary py-16 md:py-20 border-b border-border/60">
+        <div className="container mx-auto px-4 space-y-6">
+          <div className="max-w-3xl space-y-4">
+            <p className="text-xs font-semibold tracking-[0.25em] uppercase text-muted-foreground">
+              Services
+            </p>
+            <h1 className="text-3xl md:text-4xl font-bold text-primary">
+              What We Deliver: The Transformation Quadrant
+            </h1>
+            <p className="text-sm md:text-base text-muted-foreground">
+              Five interconnected service pillars designed to drive exponential, self-sustaining
+              growth. From chief of staff operating models and innovation portfolios to AI agents,
+              training, and global partnerships, each pillar can be engaged individually or as part
+              of a unified transformation program.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-primary text-white py-20">
+      {/* Service Card 1 — Chief of Staff & Agile Process Transformation */}
+      <section id="chief-of-staff" className="bg-white py-16 md:py-20 border-b border-border/60 scroll-mt-24">
+        <div className="container mx-auto px-4 grid gap-10 md:grid-cols-[1.2fr,1fr] items-start">
+          <div className="space-y-5">
+            <div className="inline-flex items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
+              <Target className="h-3 w-3 text-primary" />
+              Internal Foundation
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-primary">
+              Chief of Staff &amp; Agile Process Transformation
+            </h2>
+            <p className="text-sm md:text-base text-muted-foreground">
+              We integrate into the executive office to make time, information, and decision-making
+              more effective. This is the operating system of your leadership team — combining chief
+              of staff capabilities, agile governance, and special projects execution.
+            </p>
+
+            <div className="space-y-3">
+              <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                Key Deliverables
+              </p>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>Executive Operating System (EOS) design and implementation</li>
+                <li>Agile governance &amp; OKR orchestration across business units</li>
+                <li>Strategic liaison &amp; shadow leadership for CEOs and ministers</li>
+                <li>Special projects leadership &amp; change advocacy inside the organization</li>
+              </ul>
+            </div>
+
+            <div className="space-y-3">
+              <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                Impact Mapping
+              </p>
+              <div className="grid gap-3 md:grid-cols-2 text-xs md:text-sm">
+                <Card className="p-3 border border-border/70 bg-secondary/40">
+                  <p className="font-semibold text-foreground">Strategy &amp; Planning</p>
+                  <p className="text-muted-foreground">Strategic Alignment</p>
+                </Card>
+                <Card className="p-3 border border-border/70 bg-secondary/40">
+                  <p className="font-semibold text-foreground">Operations</p>
+                  <p className="text-muted-foreground">Operational Excellence</p>
+                </Card>
+                <Card className="p-3 border border-border/70 bg-secondary/40">
+                  <p className="font-semibold text-foreground">Communication</p>
+                  <p className="text-muted-foreground">Information Fluidity</p>
+                </Card>
+                <Card className="p-3 border border-border/70 bg-secondary/40">
+                  <p className="font-semibold text-foreground">Execution</p>
+                  <p className="text-muted-foreground">Rapid Value Delivery</p>
+                </Card>
+              </div>
+            </div>
+
+            <Link href="/services/chief-of-staff">
+              <a className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-[#101a3b] transition-colors">
+                Explore This Service
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </Link>
+          </div>
+
+          <Card className="p-6 space-y-4 border border-border/80 bg-secondary/40">
+            <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+              Ideal For
+            </p>
+            <ul className="space-y-2 text-xs md:text-sm text-muted-foreground">
+              <li>CEOs, ministers, and chairpersons managing complex stakeholder maps</li>
+              <li>Organizations undergoing rapid growth, restructuring, or post-M&amp;A integration</li>
+              <li>Boards needing clear visibility and disciplined operating rhythm</li>
+            </ul>
+          </Card>
+        </div>
+      </section>
+
+      {/* Service Card 2 — Innovation Transformation */}
+      <section id="innovation-transformation" className="bg-secondary py-16 md:py-20 border-b border-border/60 scroll-mt-24">
+        <div className="container mx-auto px-4 grid gap-10 md:grid-cols-[1.2fr,1fr] items-start">
+          <div className="space-y-5">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-medium text-muted-foreground">
+              <Target className="h-3 w-3 text-primary" />
+              Culture &amp; Growth Engine
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-primary">
+              Innovation Transformation
+            </h2>
+            <p className="text-sm md:text-base text-muted-foreground">
+              Shift from one-off projects to a continuous cycle of transformational growth aligned
+              to Vision 2030 and your corporate strategy. We help you design the innovation
+              operating model, pipeline, and culture that sustain long-term relevance.
+            </p>
+
+            <div className="space-y-3">
+              <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                Key Deliverables
+              </p>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>Innovation strategy &amp; operating model design</li>
+                <li>Innovation portfolio &amp; execution (ideas → delivery pipeline)</li>
+                <li>Innovation capability building (people, culture, and leadership)</li>
+                <li>
+                  Innovation labs &amp; ecosystem activation (hackathons, accelerators, startup
+                  partnerships)
+                </li>
+              </ul>
+            </div>
+
+            <Link href="/services/innovation-transformation">
+              <a className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-[#101a3b] transition-colors">
+                Explore This Service
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </Link>
+          </div>
+
+          <Card className="p-6 space-y-3 border border-border/80 bg-white">
+            <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+              Where It Shows Up
+            </p>
+            <ul className="space-y-2 text-xs md:text-sm text-muted-foreground">
+              <li>National Vision 2030 innovation programs and sector strategies</li>
+              <li>Corporate innovation labs and transformation offices</li>
+              <li>University, accelerator, and ecosystem-level initiatives</li>
+            </ul>
+          </Card>
+        </div>
+      </section>
+
+      {/* Service Card 3 — AI Transformation */}
+      <section id="ai-transformation" className="bg-white py-16 md:py-20 border-b border-border/60 scroll-mt-24">
+        <div className="container mx-auto px-4 grid gap-10 md:grid-cols-[1.2fr,1fr] items-start">
+          <div className="space-y-5">
+            <div className="inline-flex items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
+              <Brain className="h-3 w-3 text-primary" />
+              The Accelerator
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-primary">
+              AI Transformation
+            </h2>
+            <p className="text-sm md:text-base text-muted-foreground">
+              Deploy AI to drive internal speed-to-information while creating new, sellable revenue
+              streams. We combine AI strategy, agent deployment, and product development into a
+              single, outcome-focused engagement.
+            </p>
+
+            <div className="space-y-3">
+              <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                Key Deliverables
+              </p>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>Rapid AI agent deployment &amp; orchestration for internal workflows</li>
+                <li>Strategic AI roadmap &amp; execution for board and CXO alignment</li>
+                <li>Commercial AI product development (white-label and proprietary)</li>
+                <li>AI workforce upskilling &amp; cultural integration across teams</li>
+              </ul>
+            </div>
+
+            <Link href="/services/ai-transformation">
+              <a className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-[#101a3b] transition-colors">
+                Explore This Service
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </Link>
+          </div>
+
+          <Card className="p-6 space-y-3 border border-border/80 bg-secondary/40">
+            <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+              Outcomes
+            </p>
+            <ul className="space-y-2 text-xs md:text-sm text-muted-foreground">
+              <li>2–10x productivity gains on targeted processes</li>
+              <li>New AI-enabled products and revenue streams</li>
+              <li>Clear governance around ethics, risk, and compliance</li>
+            </ul>
+          </Card>
+        </div>
+      </section>
+
+      {/* Service Card 4 — Training & Talent */}
+      <section id="training-talent" className="bg-secondary py-16 md:py-20 border-b border-border/60 scroll-mt-24">
+        <div className="container mx-auto px-4 grid gap-10 md:grid-cols-[1.2fr,1fr] items-start">
+          <div className="space-y-5">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-medium text-muted-foreground">
+              <Users className="h-3 w-3 text-primary" />
+              People Development
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-primary">
+              Training &amp; Talent
+            </h2>
+            <p className="text-sm md:text-base text-muted-foreground">
+              Accelerate transformation through continuous talent development at every organizational
+              level — from the boardroom to frontline teams, and across the broader developer
+              ecosystem.
+            </p>
+
+            <div className="space-y-3">
+              <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                Key Deliverables
+              </p>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>Executive training (in partnership with Ivey Business School and others)</li>
+                <li>Technical training (AI agents, Cloud, Flutter, and more)</li>
+                <li>Vocational training (Cybersecurity, nurse assistant, and more)</li>
+                <li>
+                  Community-led learning via devMENA (180K+ followers across YouTube and Facebook)
+                </li>
+              </ul>
+            </div>
+
+            <Link href="/services/training-talent">
+              <a className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-[#101a3b] transition-colors">
+                Explore This Service
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </Link>
+          </div>
+
+          <Card className="p-6 space-y-3 border border-border/80 bg-white">
+            <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+              Talent Ecosystem
+            </p>
+            <ul className="space-y-2 text-xs md:text-sm text-muted-foreground">
+              <li>Integration with national skilling agendas and corporate academies</li>
+              <li>Programs for executives, professionals, and youth talent</li>
+              <li>Developer community MENA engagement through events and content</li>
+            </ul>
+          </Card>
+        </div>
+      </section>
+
+      {/* Service Card 5 — External Growth & Partnerships */}
+      <section id="external-growth-partnerships" className="bg-white py-16 md:py-20 scroll-mt-24">
+        <div className="container mx-auto px-4 grid gap-10 md:grid-cols-[1.2fr,1fr] items-start">
+          <div className="space-y-5">
+            <div className="inline-flex items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
+              <Globe2 className="h-3 w-3 text-primary" />
+              Expansion
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-primary">
+              External Growth &amp; Partnerships
+            </h2>
+            <p className="text-sm md:text-base text-muted-foreground">
+              Achieve regional dominance through strategic partnerships, M&amp;A, and global tech
+              transfer. We help you map ecosystems, build pipelines, and convert relationships into
+              measurable growth.
+            </p>
+
+            <div className="space-y-3">
+              <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                Key Deliverables
+              </p>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>Regional &amp; global ecosystem mapping (G2G, G2B)</li>
+                <li>M&amp;A advisory &amp; opportunistic playbooks (on- and off-market)</li>
+                <li>China-to-MENA tech bridge (IP acquisition &amp; localization)</li>
+                <li>High-impact talent &amp; pipeline orchestration</li>
+              </ul>
+            </div>
+
+            <div className="space-y-3">
+              <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                Partnership Pillars
+              </p>
+              <div className="grid gap-3 md:grid-cols-2 text-xs md:text-sm">
+                <Card className="p-3 border border-border/70 bg-secondary/40">
+                  <p className="font-semibold text-foreground">Partnerships</p>
+                  <p className="text-muted-foreground">Market Access &amp; Tech Transfer</p>
+                </Card>
+                <Card className="p-3 border border-border/70 bg-secondary/40">
+                  <p className="font-semibold text-foreground">Investments</p>
+                  <p className="text-muted-foreground">Rapid Capability Expansion</p>
+                </Card>
+                <Card className="p-3 border border-border/70 bg-secondary/40">
+                  <p className="font-semibold text-foreground">Product &amp; IP</p>
+                  <p className="text-muted-foreground">Higher Valuation &amp; Differentiation</p>
+                </Card>
+                <Card className="p-3 border border-border/70 bg-secondary/40">
+                  <p className="font-semibold text-foreground">Pipelines</p>
+                  <p className="text-muted-foreground">Sustainable Revenue Growth</p>
+                </Card>
+              </div>
+            </div>
+
+            <Link href="/services/external-growth-partnerships">
+              <a className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-[#101a3b] transition-colors">
+                Explore This Service
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </Link>
+          </div>
+
+          <Card className="p-6 space-y-3 border border-border/80 bg-secondary/40">
+            <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+              Use Cases
+            </p>
+            <ul className="space-y-2 text-xs md:text-sm text-muted-foreground">
+              <li>Market entry into Saudi Arabia and wider MENA</li>
+              <li>Cross-border M&amp;A and integration support</li>
+              <li>Scaling government and private sector partnership pipelines</li>
+            </ul>
+          </Card>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="bg-primary text-primary-foreground py-16 md:py-20">
         <div className="container mx-auto px-4 text-center space-y-6">
-          <h2 className="text-4xl font-bold">Ready to Get Started?</h2>
-          <p className="text-lg text-blue-100 max-w-2xl mx-auto">
-            Let us discuss which service is the best fit for your organization and how we can help you achieve your goals.
+          <h2 className="text-3xl md:text-4xl font-bold">
+            Not Sure Where to Start?
+          </h2>
+          <p className="text-sm md:text-base text-primary-foreground/80 max-w-2xl mx-auto">
+            We&apos;ll help you prioritize the right combination of chief of staff, innovation, AI,
+            talent, and partnerships for your current mandate — starting with a free discovery
+            engagement.
           </p>
           <Link href="/contact">
-            <a className="bg-accent text-white px-8 py-3 rounded-lg hover:bg-blue-400 transition-all inline-flex items-center gap-2">
-              Schedule a Consultation
-              <ArrowRight size={20} />
+            <a className="inline-flex items-center gap-2 rounded-lg bg-[#C9A84C] px-8 py-3 text-sm font-semibold text-[#050922] hover:bg-[#b2903f] transition-colors">
+              Start a Conversation
+              <ArrowRight className="h-4 w-4" />
             </a>
           </Link>
         </div>
       </section>
 
-
-
-      {/* Footer */}
       <Footer />
     </div>
   );
 }
+
