@@ -7,6 +7,8 @@ import { useState } from "react";
 export default function Contact() {
   const [formData, setFormData] = useState({
     fullName: "",
+    email: "",
+    whatsapp: "",
     organization: "",
     role: "",
     country: "",
@@ -28,12 +30,24 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Build mailto body with form data
+    const subject = encodeURIComponent(
+      `New Mandate Inquiry from ${formData.fullName} — ${formData.service || "General"}`
+    );
+    const body = encodeURIComponent(
+      `Full Name: ${formData.fullName}\nEmail: ${formData.email}\nWhatsApp: ${formData.whatsapp}\nOrganization: ${formData.organization}\nRole: ${formData.role}\nCountry: ${formData.country}\nService: ${formData.service}\n\nMessage:\n${formData.message}`
+    );
+    window.location.href = `mailto:support@ixlconsulting.tech?subject=${subject}&body=${body}`;
+
     console.log("Contact form submitted:", formData);
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
       setFormData({
         fullName: "",
+        email: "",
+        whatsapp: "",
         organization: "",
         role: "",
         country: "",
@@ -49,7 +63,7 @@ export default function Contact() {
 
       {/* Section 1 — Intro */}
       <section className="bg-secondary py-16 md:py-20 border-b border-border/60">
-        <div className="container mx-auto px-4 space-y-5">
+        <div className="container mx-auto space-y-5">
           <div className="max-w-3xl space-y-3">
             <h1 className="text-3xl md:text-4xl font-bold text-primary">
               Let&apos;s Build Something Transformational
@@ -64,7 +78,7 @@ export default function Contact() {
 
       {/* Section 2 — Contact Form */}
       <section className="bg-white py-16 md:py-20 border-b border-border/60">
-        <div className="container mx-auto px-4 grid gap-10 lg:grid-cols-[1.5fr,1fr] items-start">
+        <div className="container mx-auto grid gap-10 lg:grid-cols-[1.5fr,1fr] items-start">
           <div className="max-w-xl">
             <h2 className="text-xl md:text-2xl font-semibold text-primary mb-4">
               Tell Us About Your Mandate
@@ -105,6 +119,37 @@ export default function Contact() {
                         onChange={handleChange}
                         className="w-full px-3 py-2.5 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
                         placeholder="Your organization"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div>
+                      <label className="block text-xs font-semibold text-foreground mb-1.5">
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-3 py-2.5 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                        placeholder="your@email.com"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-semibold text-foreground mb-1.5">
+                        WhatsApp Number *
+                      </label>
+                      <input
+                        type="tel"
+                        name="whatsapp"
+                        value={formData.whatsapp}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-3 py-2.5 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                        placeholder="+971 50 123 4567"
                       />
                     </div>
                   </div>
@@ -176,7 +221,7 @@ export default function Contact() {
 
                   <button
                     type="submit"
-                    className="w-full bg-primary text-white px-6 py-3 rounded-lg hover:bg-[#101a3b] transition-colors text-sm font-semibold flex items-center justify-center gap-2"
+                    className="w-full bg-primary text-white px-6 py-3 rounded-lg hover:bg-[var(--brand-primary-mid)] transition-colors text-sm font-semibold flex items-center justify-center gap-2"
                   >
                     Send Message
                     <Send className="h-4 w-4" />
@@ -196,28 +241,38 @@ export default function Contact() {
                 <p>
                   <span className="font-semibold text-foreground">Email:</span>{" "}
                   <a
-                    href="mailto:salim@ixlconsulting.tech"
-                    className="text-[#2E86AB] hover:underline"
+                    href="mailto:support@ixlconsulting.tech"
+                    className="text-[var(--brand-primary-light)] hover:underline"
                   >
-                    salim@ixlconsulting.tech
+                    support@ixlconsulting.tech
                   </a>
                 </p>
                 <p className="flex items-center gap-2">
                   <Linkedin className="h-4 w-4 text-primary" />
                   <span>
                     LinkedIn:{" "}
-                    <span className="font-semibold text-foreground">
+                    <a
+                      href="https://ae.linkedin.com/in/salim-abid"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold text-foreground hover:text-primary transition-colors"
+                    >
                       Salim Abid
-                    </span>
+                    </a>
                   </span>
                 </p>
                 <p className="flex items-center gap-2">
                   <Youtube className="h-4 w-4 text-primary" />
                   <span>
                     YouTube:{" "}
-                    <span className="font-semibold text-foreground">
+                    <a
+                      href="https://www.youtube.com/results?search_query=devmena"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold text-foreground hover:text-primary transition-colors"
+                    >
                       devMENA Channel — 95K+ subscribers
-                    </span>
+                    </a>
                   </span>
                 </p>
               </div>
@@ -273,4 +328,3 @@ export default function Contact() {
     </div>
   );
 }
-

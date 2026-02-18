@@ -41,7 +41,7 @@ export default function Insights() {
       <Navbar />
 
       <section className="bg-secondary py-16 md:py-20 border-b border-border/60">
-        <div className="container mx-auto px-4 space-y-5">
+        <div className="container mx-auto space-y-5">
           <div className="max-w-3xl space-y-3">
             <p className="text-xs font-semibold tracking-[0.25em] uppercase text-muted-foreground">
               Insights
@@ -58,7 +58,7 @@ export default function Insights() {
       </section>
 
       <section className="bg-white py-16 md:py-20">
-        <div className="container mx-auto px-4 grid gap-6 md:grid-cols-2">
+        <div className="container mx-auto grid gap-6 md:grid-cols-2">
           {posts.map(post => (
             <Card key={post.slug} className="p-6 md:p-7 border border-border/80 hover:shadow-lg transition-shadow flex flex-col justify-between">
               <div className="space-y-3">
@@ -74,7 +74,7 @@ export default function Insights() {
               </div>
               <div className="mt-4">
                 <Link href={post.slug}>
-                  <a className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-[#2E86AB]">
+                  <a className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-[var(--brand-primary-light)]">
                     Read Article
                     <ArrowRight className="h-4 w-4" />
                   </a>
@@ -86,7 +86,7 @@ export default function Insights() {
       </section>
 
       <section className="bg-primary text-primary-foreground py-12">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <div className="h-10 w-10 rounded-full bg-primary-foreground/10 flex items-center justify-center">
               <BookOpen className="h-5 w-5" />
@@ -99,7 +99,7 @@ export default function Insights() {
             </div>
           </div>
           <Link href="/contact">
-            <a className="inline-flex items-center gap-2 rounded-lg bg-[#C9A84C] px-6 py-2.5 text-sm font-semibold text-[#050922] hover:bg-[#b2903f] transition-colors">
+            <a className="inline-flex items-center gap-2 rounded-lg bg-[var(--brand-accent-gold)] px-6 py-2.5 text-sm font-semibold text-[var(--brand-dark-deep)] hover:bg-[#b2903f] transition-colors">
               Request a Briefing
               <ArrowRight className="h-4 w-4" />
             </a>

@@ -1,9 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* Google Fonts Import */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
-
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -46,50 +43,70 @@
 }
 
 :root {
-  /* iXL Consulting 2026 Color Palette */
-  /* Primary: Deep Navy Blue (#1B2B5E) */
-  --primary: #1B2B5E;
-  --primary-foreground: #FFFFFF;
-  --sidebar-primary: #003D82;
-  --sidebar-primary-foreground: #FFFFFF;
-  
-  /* Accent: Teal / Medium Blue (#2E86AB) */
-  --accent: #2E86AB;
-  --accent-foreground: #FFFFFF;
-  
-  /* Secondary: Light Slate Gray (#F5F7FA) */
+  /* ========================================
+     iXL Consulting 2026 — Brand Design Tokens
+     ======================================== */
+
+  /* Primary Palette */
+  --brand-primary: #05389F;
+  --brand-primary-mid: #0F5092;
+  --brand-primary-light: #3783B2;
+
+  /* Dark Backgrounds */
+  --brand-dark: #151F28;
+  --brand-dark-deep: #041422;
+
+  /* Accent (Gold) */
+  --brand-accent-gold: #C9A84C;
+
+  /* White */
+  --brand-white: #FFFFFF;
+
+  /* ======================================== */
+
+  /* Primary: Brand Deep Blue (#05389F) */
+  --primary: var(--brand-primary);
+  --primary-foreground: var(--brand-white);
+  --sidebar-primary: var(--brand-primary-mid);
+  --sidebar-primary-foreground: var(--brand-white);
+
+  /* Accent: Brand Mid Blue (#3783B2) */
+  --accent: var(--brand-primary-light);
+  --accent-foreground: var(--brand-white);
+
+  /* Secondary: Light Slate Gray */
   --secondary: #F5F7FA;
-  --secondary-foreground: #003D82;
-  
+  --secondary-foreground: var(--brand-primary-mid);
+
   /* Neutral colors */
-  --background: #FFFFFF;
+  --background: var(--brand-white);
   --foreground: #1A1A1A;
-  --card: #FFFFFF;
+  --card: var(--brand-white);
   --card-foreground: #1A1A1A;
-  --popover: #FFFFFF;
+  --popover: var(--brand-white);
   --popover-foreground: #1A1A1A;
   --muted: #E8ECEF;
   --muted-foreground: #666666;
   --destructive: #EF4444;
-  --destructive-foreground: #FFFFFF;
+  --destructive-foreground: var(--brand-white);
   --border: #E8ECEF;
   --input: #F5F7FA;
-  --ring: #00A8CC;
-  
-  --sidebar: #FFFFFF;
+  --ring: var(--brand-primary-light);
+
+  --sidebar: var(--brand-white);
   --sidebar-foreground: #1A1A1A;
   --sidebar-accent: #F5F7FA;
-  --sidebar-accent-foreground: #003D82;
+  --sidebar-accent-foreground: var(--brand-primary-mid);
   --sidebar-border: #E8ECEF;
-  --sidebar-ring: #00A8CC;
-  
-  /* Chart colors using blue palette */
-  --chart-1: #003D82;
-  --chart-2: #0056B3;
-  --chart-3: #00A8CC;
-  --chart-4: #00D9FF;
+  --sidebar-ring: var(--brand-primary-light);
+
+  /* Chart colors using brand blue palette */
+  --chart-1: var(--brand-primary);
+  --chart-2: var(--brand-primary-mid);
+  --chart-3: var(--brand-primary-light);
+  --chart-4: #5AA8D0;
   --chart-5: #E8ECEF;
-  
+
   --radius: 0.65rem;
 }
 
@@ -109,7 +126,7 @@
   --muted: oklch(0.274 0.006 286.033);
   --muted-foreground: oklch(0.705 0.015 286.067);
   --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground:  oklch(0.92 0.005 65);
+  --accent-foreground: oklch(0.92 0.005 65);
   --destructive: oklch(0.704 0.191 22.216);
   --destructive-foreground: oklch(0.985 0 0);
   --border: oklch(1 0 0 / 10%);
@@ -123,7 +140,7 @@
   --sidebar: oklch(0.21 0.006 285.885);
   --sidebar-foreground: oklch(0.85 0.005 65);
   --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground:  oklch(0.985 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.488 0.243 264.376);
 }
@@ -132,27 +149,36 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', sans-serif;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Google Sans Display', 'Google Sans', sans-serif;
     font-weight: 700;
   }
-  
+
   h1 {
     @apply text-5xl font-bold;
   }
-  
+
   h2 {
     @apply text-4xl font-bold;
   }
-  
+
   h3 {
     @apply text-2xl font-bold;
   }
+
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
   [type="button"]:not(:disabled),
@@ -167,6 +193,7 @@
 }
 
 @layer components {
+
   /**
    * Custom container utility that centers content and adds responsive padding.
    *
@@ -184,8 +211,11 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
-    padding-right: 1rem;
+    padding-left: 1.5rem;
+    /* 24px - mobile padding */
+    padding-right: 1.5rem;
+    max-width: 1280px;
+    /* max-w-7xl — standard centered container */
   }
 
   .flex {
@@ -195,16 +225,38 @@
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
-      padding-right: 1.5rem;
+      padding-left: 3rem;
+      /* 48px - tablet padding */
+      padding-right: 3rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem; /* 32px - desktop padding */
-      padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
+      padding-left: 5rem;
+      /* 80px - desktop padding */
+      padding-right: 5rem;
     }
+  }
+
+  /* CTA glow effect utility */
+  .cta-glow {
+    box-shadow: 0 0 20px rgba(55, 131, 178, 0.4), 0 0 40px rgba(55, 131, 178, 0.15);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+  }
+
+  .cta-glow:hover {
+    box-shadow: 0 0 28px rgba(55, 131, 178, 0.55), 0 0 56px rgba(55, 131, 178, 0.25);
+    transform: translateY(-1px);
+  }
+
+  /* Hover shadow transition for cards */
+  .card-hover-shadow {
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+  }
+
+  .card-hover-shadow:hover {
+    box-shadow: 0 4px 20px rgba(5, 56, 159, 0.12);
+    transform: translateY(-2px);
   }
 }

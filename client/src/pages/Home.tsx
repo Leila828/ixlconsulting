@@ -14,6 +14,10 @@ import salim from "../pages/images/salimhaj.png";
 import { Link } from "wouter";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { HeroVisual } from "@/components/HeroVisual";
+import { VideoShowcase } from "@/components/VideoShowcase";
+import { CaseStudyGrid } from "@/components/CaseStudyGrid";
+import { TransformationVisual } from "@/components/TransformationVisual";
 
 export default function Home() {
   return (
@@ -21,11 +25,11 @@ export default function Home() {
       <Navbar />
 
       {/* SECTION 1 — Hero Banner */}
-      <section className="relative overflow-hidden bg-[#050922] text-white">
-        <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_top,_#2E86AB33,_transparent_60%),radial-gradient(circle_at_bottom,_#C9A84C22,_transparent_55%)]" />
-        <div className="relative container mx-auto px-4 py-20 lg:py-24 grid gap-12 lg:grid-cols-[1.4fr,1fr] items-center">
+      <section className="relative overflow-hidden bg-[var(--brand-dark-deep)] text-white">
+        <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_top,_#3783B233,_transparent_60%),radial-gradient(circle_at_bottom,_#C9A84C22,_transparent_55%)]" />
+        <div className="relative container mx-auto py-20 lg:py-24 grid gap-12 lg:grid-cols-[1.4fr,1fr] items-center">
           <div className="space-y-8">
-            <p className="text-xs font-semibold tracking-[0.25em] uppercase text-[#C9A84C]">
+            <p className="text-xs font-semibold tracking-[0.25em] uppercase text-[var(--brand-accent-gold)]">
               360° Digital & Innovation Transformation
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
@@ -35,29 +39,35 @@ export default function Home() {
               iXL Consulting delivers 360° transformation — from AI strategy and
               chief of staff operating models to innovation strategy Vision 2030
               and global partnerships. We help boards, ministers, and CXOs
-              unlock 2–10x performance across MENA, Saudi Arabia, and beyond
+              unlock{" "}
+              <strong className="font-bold">
+                2–10x performance across MENA
+              </strong>
+              , Saudi Arabia, and beyond
               through executive-grade{" "}
-              <span className="font-semibold">
-                AI transformation consulting MENA
-              </span>
-              .
+              <strong className="font-bold">
+                AI transformation consulting MENA.
+              </strong>
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <Link href="/contact">
-                <a className="inline-flex items-center gap-2 rounded-lg bg-[#2E86AB] px-7 py-3 text-sm font-semibold shadow-lg shadow-[#00000066] hover:bg-[#256b88] transition-colors">
+                <a className="cta-glow inline-flex items-center gap-2 rounded-lg bg-[var(--brand-primary-light)] px-7 py-3 text-sm font-semibold shadow-lg hover:bg-[var(--brand-primary-mid)] transition-colors">
                   Start a Conversation
                   <ArrowRight className="h-4 w-4" />
                 </a>
               </Link>
               <a
-                href="mailto:salim@ixlconsulting.tech?subject=iXL%20Consulting%20Portfolio%20Request"
-                className="inline-flex items-center gap-2 rounded-lg border border-[#C9A84C] px-7 py-3 text-sm font-semibold text-[#C9A84C] hover:bg-[#C9A84C] hover:text-[#050922] transition-colors"
+                href="https://drive.google.com/file/d/1tVUXrc6mx3zYwwg_1-IU3QxZC5wS0IVL/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg border border-[var(--brand-accent-gold)] px-7 py-3 text-sm font-semibold text-[var(--brand-accent-gold)] hover:bg-[var(--brand-accent-gold)] hover:text-[var(--brand-dark-deep)] transition-colors"
               >
                 Download Portfolio
                 <ArrowRight className="h-4 w-4" />
               </a>
             </div>
-            <div className="mt-4 flex flex-wrap gap-3 text-xs md:text-sm text-blue-100/90">
+
+            <div className="mt-4 flex flex-wrap gap-3 justify-center sm:justify-start text-xs md:text-sm text-blue-100/90">
               <span className="rounded-full border border-blue-500/60 bg-blue-500/10 px-3 py-1">
                 Guinness World Record Holder
               </span>
@@ -73,92 +83,85 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative">
-            <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-[#2E86AB55] via-transparent to-[#C9A84C55] blur-2xl" />
-            <Card className="relative overflow-hidden rounded-3xl border border-blue-500/30 bg-[#0b1024]/90 shadow-2xl">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_#2E86AB22,_transparent_60%)]" />
-              <div className="relative p-6 space-y-4">
-                <div className="flex items-center gap-4">
+          <div className="space-y-6">
+            {/* Hero Visual — SVG Illustration */}
+            <HeroVisual />
+
+            {/* Founder Spotlight Card */}
+            <div className="relative">
+              <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-[#3783B233] via-transparent to-[#C9A84C33] blur-xl" />
+              <Card className="relative overflow-hidden rounded-2xl border border-blue-500/30 bg-[var(--brand-dark)]/90 shadow-xl">
+
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_#3783B215,_transparent_60%)]" />
+                <p className="px-5 pt-4 mb-1 text-white text-xs uppercase tracking-[0.25em]">
+                  Founder Spotlight
+                </p>
+                <div className="relative p-5 flex items-center gap-4">
                   <img
                     src={salim}
                     alt="Salim Abid, Founder of iXL Consulting"
                     loading="lazy"
-                    className="h-20 w-20 rounded-2xl object-cover border border-blue-500/40"
+                    className="h-16 w-16 rounded-xl object-cover border border-blue-500/40"
                   />
-                  <div>
-                    <p className="text-sm uppercase tracking-[0.25em] text-blue-200">
-                      Founder Spotlight
-                    </p>
-                    <p className="text-lg font-semibold">Salim Abid</p>
+
+                  <div className="flex-1">
+                    <p className="text-lg font-semibold text-[var(--brand-accent-gold)]">Salim Abid</p>
                     <p className="text-xs text-blue-200">
-                      Ex-Google Head of MENA Ecosystem · Guinness World Record
-                      Holder
+                      Ex-Google Head of MENA Ecosystem · Guinness World Record Holder
                     </p>
+                    <div className="flex gap-6 mt-2 text-xs text-blue-100">
+                      <div>
+                        <span className="text-base font-bold text-white">750K+</span>
+                        <span className="ml-1 text-blue-200">devs/yr</span>
+                      </div>
+                      <div>
+                        <span className="text-base font-bold text-white">17</span>
+                        <span className="ml-1 text-blue-200">countries</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <p className="text-xs text-blue-100/90 leading-relaxed">
-                  Trusted by global leaders for{" "}
-                  <span className="font-semibold">
-                    AI transformation consulting MENA
-                  </span>
-                  , innovation strategy Vision 2030 programs, and chief of staff
-                  consulting Saudi Arabia and beyond.
-                </p>
-                <div className="grid grid-cols-2 gap-4 text-xs text-blue-100">
-                  <div>
-                    <p className="text-2xl font-bold text-white">750K+</p>
-                    <p className="text-[11px] uppercase tracking-wide text-blue-200">
-                      Developers Trained Annually
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-2xl font-bold text-white">17</p>
-                    <p className="text-[11px] uppercase tracking-wide text-blue-200">
-                      Countries of Operation
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </Card>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
 
       {/* SECTION 2 — Credibility Stats Bar */}
-      <section className="bg-[#0b1024] text-white border-b border-border/40">
-        <div className="container mx-auto px-4 py-8 grid gap-6 md:grid-cols-3 lg:grid-cols-6 text-xs md:text-sm">
+      <section className="bg-[var(--brand-dark)] text-white border-b border-border/40">
+        <div className="container mx-auto py-8 grid gap-6 md:grid-cols-3 lg:grid-cols-6 text-xs md:text-sm">
           <div className="space-y-1">
-            <p className="text-lg font-semibold text-[#C9A84C]">30+</p>
+            <p className="text-lg font-semibold text-[var(--brand-accent-gold)]">30+</p>
             <p className="text-blue-100/90 leading-snug">
               Hackathons Run Internationally
             </p>
           </div>
           <div className="space-y-1">
-            <p className="text-lg font-semibold text-[#C9A84C]">500+</p>
+            <p className="text-lg font-semibold text-[var(--brand-accent-gold)]">500+</p>
             <p className="text-blue-100/90 leading-snug">
               Developer Communities Built
             </p>
           </div>
           <div className="space-y-1">
-            <p className="text-lg font-semibold text-[#C9A84C]">17</p>
+            <p className="text-lg font-semibold text-[var(--brand-accent-gold)]">17</p>
             <p className="text-blue-100/90 leading-snug">
               Countries of Operation
             </p>
           </div>
           <div className="space-y-1">
-            <p className="text-lg font-semibold text-[#C9A84C]">750K</p>
+            <p className="text-lg font-semibold text-[var(--brand-accent-gold)]">750K</p>
             <p className="text-blue-100/90 leading-snug">
               Developers Trained Annually
             </p>
           </div>
           <div className="space-y-1">
-            <p className="text-lg font-semibold text-[#C9A84C]">40+</p>
+            <p className="text-lg font-semibold text-[var(--brand-accent-gold)]">40+</p>
             <p className="text-blue-100/90 leading-snug">
               Innovation Hubs & Partners
             </p>
           </div>
           <div className="space-y-1">
-            <p className="text-lg font-semibold text-[#C9A84C]">180K+</p>
+            <p className="text-lg font-semibold text-[var(--brand-accent-gold)]">180K+</p>
             <p className="text-blue-100/90 leading-snug">
               Social Media Followers
             </p>
@@ -171,33 +174,39 @@ export default function Home() {
         id="transformation-quadrant"
         className="bg-white py-20 border-b border-border/60"
       >
-        <div className="container mx-auto px-4 space-y-10">
-          <div className="max-w-4xl space-y-4">
-            <p className="text-xs font-semibold tracking-[0.25em] uppercase text-muted-foreground">
-              Operating Model
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-primary">
-              A 360° Strategy: Harmonizing Leadership, Innovation, AI, and
-              Global Partnerships
-            </h2>
-            <p className="text-sm md:text-base text-muted-foreground max-w-3xl">
-              iXL’s Transformation Quadrant aligns leadership, culture, AI, and
-              external growth into a single execution system — from chief of
-              staff consulting Saudi Arabia and MENA governments to building
-              developer community MENA ecosystems and global partnership
-              pipelines.
-            </p>
+        <div className="container mx-auto space-y-10">
+          <div className="grid lg:grid-cols-[1fr,1.2fr] gap-10 items-center mb-10">
+            <div className="space-y-4">
+              <p className="text-xs font-semibold tracking-[0.25em] uppercase text-muted-foreground">
+                Operating Model
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-primary">
+                A 360° Strategy: Harmonizing Leadership, Innovation, AI, and
+                Global Partnerships
+              </h2>
+              <p className="text-sm md:text-base text-muted-foreground">
+                iXL's Transformation Quadrant aligns leadership, culture, AI, and
+                external growth into a single execution system — from chief of
+                staff consulting Saudi Arabia and MENA governments to building
+                developer community MENA ecosystems and global partnership
+                pipelines.
+              </p>
+            </div>
+            {/* Visual Representation */}
+            <div className="hidden lg:block relative h-80 w-full bg-secondary/30 rounded-full">
+              <TransformationVisual className="absolute inset-0 m-auto h-full w-full p-4" />
+            </div>
           </div>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {/* Chief of Staff & Agile Transformation */}
             <Card
               id="chief-of-staff"
-              className="group flex flex-col justify-between border border-border/80 hover:border-[#C9A84C] hover:shadow-lg transition-all"
+              className="group flex flex-col justify-between border border-border/80 hover:border-[var(--brand-accent-gold)] hover:shadow-lg transition-all card-hover-shadow"
             >
               <div className="p-6 space-y-3">
                 <div className="inline-flex items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
-                  <ShieldCheck className="h-3 w-3 text-[#2E86AB]" />
+                  <ShieldCheck className="h-3 w-3 text-[var(--brand-primary-light)]" />
                   The Foundation
                 </div>
                 <h3 className="text-xl font-semibold text-primary">
@@ -215,18 +224,18 @@ export default function Home() {
               </div>
               <div className="flex items-center justify-between px-6 pb-4 text-xs text-muted-foreground">
                 <span>OKR systems · KPI dashboards · CXO offices</span>
-                <ArrowRight className="h-4 w-4 text-[#2E86AB] group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="h-4 w-4 text-[var(--brand-primary-light)] group-hover:translate-x-1 transition-transform" />
               </div>
             </Card>
 
             {/* Innovation Transformation */}
             <Card
               id="innovation-transformation"
-              className="group flex flex-col justify-between border border-border/80 hover:border-[#C9A84C] hover:shadow-lg transition-all"
+              className="group flex flex-col justify-between border border-border/80 hover:border-[var(--brand-accent-gold)] hover:shadow-lg transition-all card-hover-shadow"
             >
               <div className="p-6 space-y-3">
                 <div className="inline-flex items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
-                  <Target className="h-3 w-3 text-[#2E86AB]" />
+                  <Target className="h-3 w-3 text-[var(--brand-primary-light)]" />
                   The Culture
                 </div>
                 <h3 className="text-xl font-semibold text-primary">
@@ -243,18 +252,18 @@ export default function Home() {
               </div>
               <div className="flex items-center justify-between px-6 pb-4 text-xs text-muted-foreground">
                 <span>Innovation CoE · governance · portfolio</span>
-                <ArrowRight className="h-4 w-4 text-[#2E86AB] group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="h-4 w-4 text-[var(--brand-primary-light)] group-hover:translate-x-1 transition-transform" />
               </div>
             </Card>
 
             {/* AI Transformation */}
             <Card
               id="ai-transformation"
-              className="group flex flex-col justify-between border border-border/80 hover:border-[#C9A84C] hover:shadow-lg transition-all"
+              className="group flex flex-col justify-between border border-border/80 hover:border-[var(--brand-accent-gold)] hover:shadow-lg transition-all card-hover-shadow"
             >
               <div className="p-6 space-y-3">
                 <div className="inline-flex items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
-                  <Brain className="h-3 w-3 text-[#2E86AB]" />
+                  <Brain className="h-3 w-3 text-[var(--brand-primary-light)]" />
                   The Accelerator
                 </div>
                 <h3 className="text-xl font-semibold text-primary">
@@ -271,18 +280,18 @@ export default function Home() {
               </div>
               <div className="flex items-center justify-between px-6 pb-4 text-xs text-muted-foreground">
                 <span>Agentic workflows · GenAI products</span>
-                <ArrowRight className="h-4 w-4 text-[#2E86AB] group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="h-4 w-4 text-[var(--brand-primary-light)] group-hover:translate-x-1 transition-transform" />
               </div>
             </Card>
 
             {/* Training & Talent */}
             <Card
               id="training-talent"
-              className="group flex flex-col justify-between border border-border/80 hover:border-[#C9A84C] hover:shadow-lg transition-all"
+              className="group flex flex-col justify-between border border-border/80 hover:border-[var(--brand-accent-gold)] hover:shadow-lg transition-all card-hover-shadow"
             >
               <div className="p-6 space-y-3">
                 <div className="inline-flex items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
-                  <Users className="h-3 w-3 text-[#2E86AB]" />
+                  <Users className="h-3 w-3 text-[var(--brand-primary-light)]" />
                   The People
                 </div>
                 <h3 className="text-xl font-semibold text-primary">
@@ -297,18 +306,18 @@ export default function Home() {
               </div>
               <div className="flex items-center justify-between px-6 pb-4 text-xs text-muted-foreground">
                 <span>Executive, technical & community tracks</span>
-                <ArrowRight className="h-4 w-4 text-[#2E86AB] group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="h-4 w-4 text-[var(--brand-primary-light)] group-hover:translate-x-1 transition-transform" />
               </div>
             </Card>
 
             {/* External Growth & Partnerships */}
             <Card
               id="external-growth"
-              className="group flex flex-col justify-between border border-border/80 hover:border-[#C9A84C] hover:shadow-lg transition-all lg:col-span-2"
+              className="group flex flex-col justify-between border border-border/80 hover:border-[var(--brand-accent-gold)] hover:shadow-lg transition-all lg:col-span-2 card-hover-shadow"
             >
               <div className="p-6 space-y-3">
                 <div className="inline-flex items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
-                  <Globe2 className="h-3 w-3 text-[#2E86AB]" />
+                  <Globe2 className="h-3 w-3 text-[var(--brand-primary-light)]" />
                   The Expansion
                 </div>
                 <h3 className="text-xl font-semibold text-primary">
@@ -326,7 +335,7 @@ export default function Home() {
               </div>
               <div className="flex items-center justify-between px-6 pb-4 text-xs text-muted-foreground">
                 <span>M&A advisory · cross-border · ecosystems</span>
-                <ArrowRight className="h-4 w-4 text-[#2E86AB] group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="h-4 w-4 text-[var(--brand-primary-light)] group-hover:translate-x-1 transition-transform" />
               </div>
             </Card>
           </div>
@@ -335,7 +344,7 @@ export default function Home() {
 
       {/* SECTION 4 — Why iXL / Founder Spotlight */}
       <section className="bg-secondary py-20">
-        <div className="container mx-auto px-4 grid gap-12 lg:grid-cols-[1.1fr,1.2fr] items-center">
+        <div className="container mx-auto grid gap-12 lg:grid-cols-[1.1fr,1.2fr] items-center">
           <div className="space-y-4">
             <p className="text-xs font-semibold tracking-[0.25em] uppercase text-muted-foreground">
               Founder
@@ -364,7 +373,7 @@ export default function Home() {
           <div className="grid gap-4 md:grid-cols-2">
             <Card className="p-5 border border-border/80 bg-white/80">
               <div className="flex items-center gap-3 mb-3">
-                <Award className="h-5 w-5 text-[#C9A84C]" />
+                <Award className="h-5 w-5 text-[var(--brand-accent-gold)]" />
                 <p className="text-sm font-semibold text-primary">
                   Guinness World Record
                 </p>
@@ -377,7 +386,7 @@ export default function Home() {
             </Card>
             <Card className="p-5 border border-border/80 bg-white/80">
               <div className="flex items-center gap-3 mb-3">
-                <Network className="h-5 w-5 text-[#2E86AB]" />
+                <Network className="h-5 w-5 text-[var(--brand-primary-light)]" />
                 <p className="text-sm font-semibold text-primary">
                   Ecosystem Architect
                 </p>
@@ -393,8 +402,8 @@ export default function Home() {
       </section>
 
       {/* SECTION 5 — AI Transformation Urgency Block */}
-      <section className="bg-[#02030b] text-white py-20">
-        <div className="container mx-auto px-4 space-y-10">
+      <section className="bg-[var(--brand-dark-deep)] text-white py-20">
+        <div className="container mx-auto space-y-10">
           <div className="max-w-3xl space-y-4">
             <p className="text-xs font-semibold tracking-[0.25em] uppercase text-blue-300/90">
               AI Performance Mandate
@@ -412,7 +421,7 @@ export default function Home() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            <Card className="h-full border border-blue-500/30 bg-[#050922] text-blue-50">
+            <Card className="h-full border border-blue-500/30 bg-[var(--brand-dark)] text-blue-50">
               <div className="p-5 space-y-3">
                 <p className="text-xs font-semibold text-blue-300 uppercase tracking-wide">
                   2–10x Productivity Potential
@@ -427,7 +436,7 @@ export default function Home() {
               </div>
             </Card>
 
-            <Card className="h-full border border-blue-500/30 bg-[#050922] text-blue-50">
+            <Card className="h-full border border-blue-500/30 bg-[var(--brand-dark)] text-blue-50">
               <div className="p-5 space-y-3">
                 <p className="text-xs font-semibold text-blue-300 uppercase tracking-wide">
                   $4.4 Trillion Opportunity
@@ -442,7 +451,7 @@ export default function Home() {
               </div>
             </Card>
 
-            <Card className="h-full border border-blue-500/30 bg-[#050922] text-blue-50">
+            <Card className="h-full border border-blue-500/30 bg-[var(--brand-dark)] text-blue-50">
               <div className="p-5 space-y-3">
                 <p className="text-xs font-semibold text-blue-300 uppercase tracking-wide">
                   Competitive Displacement
@@ -461,7 +470,7 @@ export default function Home() {
               </div>
             </Card>
 
-            <Card className="h-full border border-blue-500/30 bg-[#050922] text-blue-50">
+            <Card className="h-full border border-blue-500/30 bg-[var(--brand-dark)] text-blue-50">
               <div className="p-5 space-y-3">
                 <p className="text-xs font-semibold text-blue-300 uppercase tracking-wide">
                   Human–Agent Collaboration
@@ -483,7 +492,7 @@ export default function Home() {
 
           <div>
             <Link href="/services">
-              <a className="inline-flex items-center gap-2 rounded-lg bg-[#2E86AB] px-7 py-3 text-sm font-semibold text-white hover:bg-[#256b88] transition-colors">
+              <a className="inline-flex items-center gap-2 rounded-lg bg-[var(--brand-primary-light)] px-7 py-3 text-sm font-semibold text-white hover:bg-[var(--brand-primary-mid)] transition-colors">
                 Explore Our AI Services
                 <ArrowRight className="h-4 w-4" />
               </a>
@@ -494,7 +503,7 @@ export default function Home() {
 
       {/* SECTION 6 — Featured Clients & Partners Logos */}
       <section id="partners" className="bg-white py-20">
-        <div className="container mx-auto px-4 space-y-10">
+        <div className="container mx-auto space-y-10">
           <div className="text-center space-y-3">
             <p className="text-xs font-semibold tracking-[0.25em] uppercase text-muted-foreground">
               Credibility
@@ -536,9 +545,12 @@ export default function Home() {
         </div>
       </section>
 
+      {/* SECTION 6B — Case Study Visual Grid */}
+      <CaseStudyGrid />
+
       {/* SECTION 7 — Engagement Model Teaser */}
       <section className="bg-secondary py-20">
-        <div className="container mx-auto px-4 space-y-10">
+        <div className="container mx-auto space-y-10">
           <div className="max-w-3xl space-y-4">
             <p className="text-xs font-semibold tracking-[0.25em] uppercase text-muted-foreground">
               Engagement Model
@@ -556,7 +568,7 @@ export default function Home() {
           <div className="grid gap-6 md:grid-cols-3">
             <Card className="h-full border border-border/80 bg-white">
               <div className="p-6 space-y-3">
-                <p className="text-xs font-semibold uppercase tracking-wide text-[#2E86AB]">
+                <p className="text-xs font-semibold uppercase tracking-wide text-[var(--brand-primary-light)]">
                   Phase A · Free
                 </p>
                 <h3 className="text-xl font-semibold text-primary">
@@ -572,7 +584,7 @@ export default function Home() {
 
             <Card className="h-full border border-border/80 bg-white">
               <div className="p-6 space-y-3">
-                <p className="text-xs font-semibold uppercase tracking-wide text-[#2E86AB]">
+                <p className="text-xs font-semibold uppercase tracking-wide text-[var(--brand-primary-light)]">
                   Phase B
                 </p>
                 <h3 className="text-xl font-semibold text-primary">
@@ -588,7 +600,7 @@ export default function Home() {
 
             <Card className="h-full border border-border/80 bg-white">
               <div className="p-6 space-y-3">
-                <p className="text-xs font-semibold uppercase tracking-wide text-[#2E86AB]">
+                <p className="text-xs font-semibold uppercase tracking-wide text-[var(--brand-primary-light)]">
                   Phase C
                 </p>
                 <h3 className="text-xl font-semibold text-primary">
@@ -605,7 +617,7 @@ export default function Home() {
 
           <div>
             <Link href="/contact">
-              <a className="inline-flex items-center gap-2 rounded-lg bg-primary px-7 py-3 text-sm font-semibold text-primary-foreground hover:bg-[#101a3b] transition-colors">
+              <a className="inline-flex items-center gap-2 rounded-lg bg-primary px-7 py-3 text-sm font-semibold text-primary-foreground hover:bg-[var(--brand-primary-mid)] transition-colors">
                 Start With a Free Discovery
                 <ArrowRight className="h-4 w-4" />
               </a>
@@ -616,7 +628,7 @@ export default function Home() {
 
       {/* SECTION 8 — Testimonials / Social Proof */}
       <section className="bg-white py-20">
-        <div className="container mx-auto px-4 space-y-10">
+        <div className="container mx-auto space-y-10">
           <div className="text-center space-y-3">
             <p className="text-xs font-semibold tracking-[0.25em] uppercase text-muted-foreground">
               Social Proof
@@ -629,7 +641,7 @@ export default function Home() {
           <div className="grid gap-6 md:grid-cols-2">
             <Card className="p-6 border border-border/80 bg-secondary/40">
               <div className="flex items-center gap-3 mb-3">
-                <Award className="h-6 w-6 text-[#C9A84C]" />
+                <Award className="h-6 w-6 text-[var(--brand-accent-gold)]" />
                 <p className="text-sm font-semibold text-primary">
                   Guinness World Record Highlight
                 </p>
@@ -647,7 +659,7 @@ export default function Home() {
 
             <Card className="p-6 border border-border/80 bg-secondary/40">
               <div className="flex items-center gap-3 mb-3">
-                <LineChart className="h-6 w-6 text-[#2E86AB]" />
+                <LineChart className="h-6 w-6 text-[var(--brand-primary-light)]" />
                 <p className="text-sm font-semibold text-primary">
                   YouTube & Community Reach
                 </p>
@@ -664,9 +676,12 @@ export default function Home() {
         </div>
       </section>
 
+      {/* SECTION 8B — Video Showcase */}
+      <VideoShowcase />
+
       {/* SECTION 9 — Final CTA */}
       <section className="bg-primary text-primary-foreground py-20">
-        <div className="container mx-auto px-4 text-center space-y-6">
+        <div className="container mx-auto text-center space-y-6">
           <h2 className="text-3xl md:text-4xl font-bold">
             Ready to Transform?
           </h2>
@@ -676,10 +691,10 @@ export default function Home() {
             partnerships.
           </p>
           <a
-            href="mailto:salim@ixlconsulting.tech"
-            className="inline-flex items-center gap-2 rounded-lg bg-[#C9A84C] px-8 py-3 text-sm font-semibold text-[#050922] hover:bg-[#b2903f] transition-colors"
+            href="mailto:support@ixlconsulting.tech"
+            className="inline-flex items-center gap-2 rounded-lg bg-[var(--brand-accent-gold)] px-8 py-3 text-sm font-semibold text-[var(--brand-dark-deep)] hover:bg-[#b2903f] transition-colors"
           >
-            Contact Salim
+            Contact Us
             <ArrowRight className="h-4 w-4" />
           </a>
         </div>
@@ -689,4 +704,3 @@ export default function Home() {
     </div>
   );
 }
-

@@ -11,7 +11,7 @@ export default function About() {
 
       {/* SECTION 1 — Company Story */}
       <section className="bg-secondary py-16 md:py-20 border-b border-border/60">
-        <div className="container mx-auto px-4 grid gap-10 md:grid-cols-[1.4fr,1fr] items-start">
+        <div className="container mx-auto grid gap-10 md:grid-cols-[1.4fr,1fr] items-start">
           <div className="space-y-5">
             <p className="text-xs font-semibold tracking-[0.25em] uppercase text-muted-foreground">
               Our Story
@@ -67,7 +67,7 @@ export default function About() {
 
       {/* SECTION 2 — Why Us / Differentiation */}
       <section className="bg-white py-16 md:py-20 border-b border-border/60">
-        <div className="container mx-auto px-4 space-y-10">
+        <div className="container mx-auto space-y-10">
           <div className="max-w-3xl space-y-3">
             <p className="text-xs font-semibold tracking-[0.25em] uppercase text-muted-foreground">
               Why iXL
@@ -140,7 +140,7 @@ export default function About() {
 
       {/* SECTION 3 — Comparison Table */}
       <section className="bg-secondary py-16 md:py-20 border-b border-border/60">
-        <div className="container mx-auto px-4 space-y-8">
+        <div className="container mx-auto space-y-8">
           <div className="max-w-3xl space-y-3">
             <p className="text-xs font-semibold tracking-[0.25em] uppercase text-muted-foreground">
               Differentiation
@@ -214,7 +214,7 @@ export default function About() {
 
       {/* SECTION 4 — Leadership Team */}
       <section className="bg-white py-16 md:py-20 border-b border-border/60">
-        <div className="container mx-auto px-4 space-y-10">
+        <div className="container mx-auto space-y-10">
           <div className="max-w-3xl space-y-3">
             <p className="text-xs font-semibold tracking-[0.25em] uppercase text-muted-foreground">
               Leadership
@@ -246,7 +246,9 @@ export default function About() {
                   </div>
                 </div>
                 <a
-                  href="#"
+                  href="https://ae.linkedin.com/in/salim-abid"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="Salim Abid on LinkedIn"
                   className="text-muted-foreground hover:text-primary"
                 >
@@ -280,7 +282,9 @@ export default function About() {
                   </div>
                 </div>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/rayanalzahab"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="Rayan AL Zahab on LinkedIn"
                   className="text-muted-foreground hover:text-primary"
                 >
@@ -313,7 +317,9 @@ export default function About() {
                   </div>
                 </div>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/mustaphailes"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="Mustapha Iles on LinkedIn"
                   className="text-muted-foreground hover:text-primary"
                 >
@@ -346,7 +352,9 @@ export default function About() {
                   </div>
                 </div>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/latifabid"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="Latif Abid on LinkedIn"
                   className="text-muted-foreground hover:text-primary"
                 >
@@ -366,7 +374,7 @@ export default function About() {
 
       {/* SECTION 5 — Global Reach Map */}
       <section className="bg-secondary py-16 md:py-20">
-        <div className="container mx-auto px-4 space-y-10">
+        <div className="container mx-auto space-y-10">
           <div className="max-w-3xl space-y-3">
             <p className="text-xs font-semibold tracking-[0.25em] uppercase text-muted-foreground">
               Global Reach
@@ -437,7 +445,7 @@ export default function About() {
 
           <div>
             <Link href="/contact">
-              <a className="inline-flex items-center gap-2 rounded-lg bg-primary px-7 py-3 text-sm font-semibold text-primary-foreground hover:bg-[#101a3b] transition-colors">
+              <a className="inline-flex items-center gap-2 rounded-lg bg-primary px-7 py-3 text-sm font-semibold text-primary-foreground hover:bg-[var(--brand-primary-mid)] transition-colors">
                 Discuss Your Global Ambitions
                 <ArrowRight className="h-4 w-4" />
               </a>

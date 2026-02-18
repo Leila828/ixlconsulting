@@ -4,8 +4,8 @@ import logo from "../pages/images/logo.png";
 
 export function Footer() {
   return (
-    <footer className="bg-[#0b1024] text-gray-300 pt-10 pb-6 mt-12">
-      <div className="container mx-auto px-4">
+    <footer className="bg-[var(--brand-dark)] text-gray-300 pt-10 pb-6 mt-12">
+      <div className="container mx-auto">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 items-start mb-6">
           {/* Column 1: Branding */}
           <div className="space-y-3">
@@ -60,7 +60,7 @@ export function Footer() {
               <li>
                 <Link href="/insights">
                   <a className="hover:text-white transition-colors">
-                    Blog/Insights
+                    Insights
                   </a>
                 </Link>
               </li>
@@ -127,30 +127,36 @@ export function Footer() {
               Get in Touch
             </h4>
             <a
-              href="mailto:salim@ixlconsulting.tech"
-              className="text-sm text-[#C9A84C] hover:underline block mb-4"
+              href="mailto:support@ixlconsulting.tech"
+              className="text-sm text-[var(--brand-accent-gold)] hover:underline block mb-4"
             >
-              salim@ixlconsulting.tech
+              support@ixlconsulting.tech
             </a>
             <div className="flex items-center gap-3">
               <a
-                href="#"
+                href="https://ae.linkedin.com/in/salim-abid"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-600 hover:border-[#C9A84C] hover:text-[#C9A84C] transition-colors"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-600 hover:border-[var(--brand-accent-gold)] hover:text-[var(--brand-accent-gold)] transition-colors"
               >
                 <Linkedin className="h-4 w-4" />
               </a>
               <a
-                href="#"
+                href="https://x.com/ixlconsulting"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="X (Twitter)"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-600 hover:border-[#C9A84C] hover:text-[#C9A84C] transition-colors"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-600 hover:border-[var(--brand-accent-gold)] hover:text-[var(--brand-accent-gold)] transition-colors"
               >
                 <Twitter className="h-4 w-4" />
               </a>
               <a
-                href="#"
+                href="https://www.youtube.com/results?search_query=devmena"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="YouTube"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-600 hover:border-[#C9A84C] hover:text-[#C9A84C] transition-colors"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-600 hover:border-[var(--brand-accent-gold)] hover:text-[var(--brand-accent-gold)] transition-colors"
               >
                 <Youtube className="h-4 w-4" />
               </a>

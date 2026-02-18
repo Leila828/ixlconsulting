@@ -11,7 +11,7 @@ export default function Partners() {
 
       {/* Hero */}
       <section className="bg-secondary py-16 md:py-20 border-b border-border/60">
-        <div className="container mx-auto px-4 space-y-5">
+        <div className="container mx-auto space-y-5">
           <div className="max-w-3xl space-y-3">
             <p className="text-xs font-semibold tracking-[0.25em] uppercase text-muted-foreground">
               Partners &amp; Network
@@ -30,7 +30,7 @@ export default function Partners() {
 
       {/* By Region */}
       <section className="bg-white py-16 md:py-20 border-b border-border/60">
-        <div className="container mx-auto px-4 space-y-8">
+        <div className="container mx-auto space-y-8">
           <div className="flex items-center gap-2">
             <Globe2 className="h-4 w-4 text-primary" />
             <p className="text-xs font-semibold tracking-[0.25em] uppercase text-muted-foreground">
@@ -119,7 +119,7 @@ export default function Partners() {
 
       {/* Global Network (Clients & Associates) */}
       <section className="bg-secondary py-16 md:py-20 border-b border-border/60">
-        <div className="container mx-auto px-4 space-y-8">
+        <div className="container mx-auto space-y-8">
           <div className="flex items-center gap-2">
             <Users className="h-4 w-4 text-primary" />
             <p className="text-xs font-semibold tracking-[0.25em] uppercase text-muted-foreground">
@@ -163,7 +163,7 @@ export default function Partners() {
 
       {/* Partnership Opportunity */}
       <section className="bg-white py-16 md:py-20">
-        <div className="container mx-auto px-4 grid gap-8 md:grid-cols-[1.4fr,1fr] items-center">
+        <div className="container mx-auto grid gap-8 md:grid-cols-[1.4fr,1fr] items-center">
           <div className="space-y-4">
             <p className="text-xs font-semibold tracking-[0.25em] uppercase text-muted-foreground">
               Partnership Opportunity
@@ -186,7 +186,7 @@ export default function Partners() {
               </ul>
             </Card>
             <Link href="/contact">
-              <a className="inline-flex items-center gap-2 rounded-lg bg-primary px-7 py-3 text-sm font-semibold text-primary-foreground hover:bg-[#101a3b] transition-colors">
+              <a className="inline-flex items-center gap-2 rounded-lg bg-primary px-7 py-3 text-sm font-semibold text-primary-foreground hover:bg-[var(--brand-primary-mid)] transition-colors">
                 Become a Partner
                 <ArrowRight className="h-4 w-4" />
               </a>

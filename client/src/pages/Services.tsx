@@ -25,7 +25,7 @@ export default function Services() {
 
       {/* Overview Intro */}
       <section className="bg-secondary py-16 md:py-20 border-b border-border/60">
-        <div className="container mx-auto px-4 space-y-6">
+        <div className="container mx-auto space-y-6">
           <div className="max-w-3xl space-y-4">
             <p className="text-xs font-semibold tracking-[0.25em] uppercase text-muted-foreground">
               Services
@@ -45,7 +45,7 @@ export default function Services() {
 
       {/* Service Card 1 — Chief of Staff & Agile Process Transformation */}
       <section id="chief-of-staff" className="bg-white py-16 md:py-20 border-b border-border/60 scroll-mt-24">
-        <div className="container mx-auto px-4 grid gap-10 md:grid-cols-[1.2fr,1fr] items-start">
+        <div className="container mx-auto grid gap-10 md:grid-cols-[1.2fr,1fr] items-start">
           <div className="space-y-5">
             <div className="inline-flex items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
               <Target className="h-3 w-3 text-primary" />
@@ -97,7 +97,7 @@ export default function Services() {
             </div>
 
             <Link href="/services/chief-of-staff">
-              <a className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-[#101a3b] transition-colors">
+              <a className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-[var(--brand-primary-mid)] transition-colors">
                 Explore This Service
                 <ArrowRight className="h-4 w-4" />
               </a>
@@ -119,7 +119,7 @@ export default function Services() {
 
       {/* Service Card 2 — Innovation Transformation */}
       <section id="innovation-transformation" className="bg-secondary py-16 md:py-20 border-b border-border/60 scroll-mt-24">
-        <div className="container mx-auto px-4 grid gap-10 md:grid-cols-[1.2fr,1fr] items-start">
+        <div className="container mx-auto grid gap-10 md:grid-cols-[1.2fr,1fr] items-start">
           <div className="space-y-5">
             <div className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-medium text-muted-foreground">
               <Target className="h-3 w-3 text-primary" />
@@ -150,7 +150,7 @@ export default function Services() {
             </div>
 
             <Link href="/services/innovation-transformation">
-              <a className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-[#101a3b] transition-colors">
+              <a className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-[var(--brand-primary-mid)] transition-colors">
                 Explore This Service
                 <ArrowRight className="h-4 w-4" />
               </a>
@@ -172,7 +172,7 @@ export default function Services() {
 
       {/* Service Card 3 — AI Transformation */}
       <section id="ai-transformation" className="bg-white py-16 md:py-20 border-b border-border/60 scroll-mt-24">
-        <div className="container mx-auto px-4 grid gap-10 md:grid-cols-[1.2fr,1fr] items-start">
+        <div className="container mx-auto grid gap-10 md:grid-cols-[1.2fr,1fr] items-start">
           <div className="space-y-5">
             <div className="inline-flex items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
               <Brain className="h-3 w-3 text-primary" />
@@ -200,7 +200,7 @@ export default function Services() {
             </div>
 
             <Link href="/services/ai-transformation">
-              <a className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-[#101a3b] transition-colors">
+              <a className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-[var(--brand-primary-mid)] transition-colors">
                 Explore This Service
                 <ArrowRight className="h-4 w-4" />
               </a>
@@ -222,7 +222,7 @@ export default function Services() {
 
       {/* Service Card 4 — Training & Talent */}
       <section id="training-talent" className="bg-secondary py-16 md:py-20 border-b border-border/60 scroll-mt-24">
-        <div className="container mx-auto px-4 grid gap-10 md:grid-cols-[1.2fr,1fr] items-start">
+        <div className="container mx-auto grid gap-10 md:grid-cols-[1.2fr,1fr] items-start">
           <div className="space-y-5">
             <div className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-medium text-muted-foreground">
               <Users className="h-3 w-3 text-primary" />
@@ -252,7 +252,7 @@ export default function Services() {
             </div>
 
             <Link href="/services/training-talent">
-              <a className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-[#101a3b] transition-colors">
+              <a className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-[var(--brand-primary-mid)] transition-colors">
                 Explore This Service
                 <ArrowRight className="h-4 w-4" />
               </a>
@@ -274,7 +274,7 @@ export default function Services() {
 
       {/* Service Card 5 — External Growth & Partnerships */}
       <section id="external-growth-partnerships" className="bg-white py-16 md:py-20 scroll-mt-24">
-        <div className="container mx-auto px-4 grid gap-10 md:grid-cols-[1.2fr,1fr] items-start">
+        <div className="container mx-auto grid gap-10 md:grid-cols-[1.2fr,1fr] items-start">
           <div className="space-y-5">
             <div className="inline-flex items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
               <Globe2 className="h-3 w-3 text-primary" />
@@ -326,7 +326,7 @@ export default function Services() {
             </div>
 
             <Link href="/services/external-growth-partnerships">
-              <a className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-[#101a3b] transition-colors">
+              <a className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-[var(--brand-primary-mid)] transition-colors">
                 Explore This Service
                 <ArrowRight className="h-4 w-4" />
               </a>
@@ -348,7 +348,7 @@ export default function Services() {
 
       {/* Final CTA */}
       <section className="bg-primary text-primary-foreground py-16 md:py-20">
-        <div className="container mx-auto px-4 text-center space-y-6">
+        <div className="container mx-auto text-center space-y-6">
           <h2 className="text-3xl md:text-4xl font-bold">
             Not Sure Where to Start?
           </h2>
@@ -358,7 +358,7 @@ export default function Services() {
             engagement.
           </p>
           <Link href="/contact">
-            <a className="inline-flex items-center gap-2 rounded-lg bg-[#C9A84C] px-8 py-3 text-sm font-semibold text-[#050922] hover:bg-[#b2903f] transition-colors">
+            <a className="inline-flex items-center gap-2 rounded-lg bg-[var(--brand-accent-gold)] px-8 py-3 text-sm font-semibold text-[var(--brand-dark-deep)] hover:bg-[#b2903f] transition-colors">
               Start a Conversation
               <ArrowRight className="h-4 w-4" />
             </a>

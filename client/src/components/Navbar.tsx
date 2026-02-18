@@ -23,22 +23,21 @@ export function Navbar() {
 
   const getLinkClass = (path: string) => {
     const isActive = path === "/" ? location === "/" : location.startsWith(path);
-    return `text-sm font-medium transition-colors ${
-      isActive ? "text-primary" : "text-foreground hover:text-primary"
-    }`;
+    return `text-sm font-medium transition-colors ${isActive ? "text-primary" : "text-foreground hover:text-primary"
+      }`;
   };
 
   const closeMobile = () => setMobileOpen(false);
 
   return (
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-border">
-      <div className="container mx-auto px-4 py-3 flex items-center justify-between gap-6">
+      <div className="container mx-auto py-3 flex items-center justify-between gap-6">
         <Link href="/">
           <a className="flex items-center gap-3 hover:opacity-90 transition-opacity">
             <img
               src={logo}
               alt="iXL Consulting Logo"
-              className="h-10 w-auto object-contain"
+              className="h-[46px] w-auto object-contain"
             />
             <div className="flex flex-col">
               <span className="text-xl font-semibold text-primary">
@@ -91,10 +90,10 @@ export function Navbar() {
             <a className={getLinkClass("/partners")}>Partners</a>
           </Link>
           <Link href="/insights">
-            <a className={getLinkClass("/insights")}>Blog/Insights</a>
+            <a className={getLinkClass("/insights")}>Insights</a>
           </Link>
           <Link href="/contact">
-            <a className="bg-primary text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-[#101a3b] transition-colors">
+            <a className="bg-primary text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-[var(--brand-primary-mid)] transition-colors">
               Contact
             </a>
           </Link>
@@ -160,7 +159,7 @@ export function Navbar() {
             </Link>
             <Link href="/insights" onClick={closeMobile}>
               <a className="block py-3 px-2 text-foreground font-medium hover:bg-secondary rounded-lg">
-                Blog/Insights
+                Insights
               </a>
             </Link>
             <Link href="/contact" onClick={closeMobile}>

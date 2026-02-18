@@ -3,6 +3,7 @@ import { ArrowRight, Award, Globe2, Target } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Link } from "wouter";
+import { CaseStudyGrid } from "@/components/CaseStudyGrid";
 
 export default function Projects() {
   return (
@@ -11,7 +12,7 @@ export default function Projects() {
 
       {/* Hero */}
       <section className="bg-secondary py-16 md:py-20 border-b border-border/60">
-        <div className="container mx-auto px-4 text-center space-y-5">
+        <div className="container mx-auto text-center space-y-5">
           <p className="text-xs font-semibold tracking-[0.25em] uppercase text-muted-foreground">
             Case Studies
           </p>
@@ -25,9 +26,12 @@ export default function Projects() {
         </div>
       </section>
 
+      {/* Visual Case Study Grid */}
+      <CaseStudyGrid />
+
       {/* Case Study 1 — Hajj Hackathon 2018 */}
       <section className="bg-white py-14 md:py-16 border-b border-border/60">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto">
           <Card className="p-6 md:p-8 grid gap-6 md:grid-cols-[1.4fr,1fr] items-start border border-border/80">
             <div className="space-y-3">
               <div className="inline-flex items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
@@ -71,7 +75,7 @@ export default function Projects() {
 
       {/* Case Study 2 — Google MENA Developer Ecosystem */}
       <section className="bg-secondary py-14 md:py-16 border-b border-border/60">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto">
           <Card className="p-6 md:p-8 grid gap-6 md:grid-cols-[1.4fr,1fr] items-start border border-border/80 bg-white">
             <div className="space-y-3">
               <div className="inline-flex items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
@@ -114,7 +118,7 @@ export default function Projects() {
 
       {/* Case Study 3 — AI Hack Africa */}
       <section className="bg-white py-14 md:py-16 border-b border-border/60">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto">
           <Card className="p-6 md:p-8 grid gap-6 md:grid-cols-[1.4fr,1fr] items-start border border-border/80">
             <div className="space-y-3">
               <div className="inline-flex items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
@@ -157,7 +161,7 @@ export default function Projects() {
 
       {/* Case Study 4 — Oman Ideathon */}
       <section className="bg-secondary py-14 md:py-16 border-b border-border/60">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto">
           <Card className="p-6 md:p-8 grid gap-6 md:grid-cols-[1.4fr,1fr] items-start border border-border/80 bg-white">
             <div className="space-y-3">
               <div className="inline-flex items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
@@ -199,7 +203,7 @@ export default function Projects() {
 
       {/* Case Study 5 — MENA Startup Ecosystem (Google for Startups) */}
       <section className="bg-white py-14 md:py-16 border-b border-border/60">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto">
           <Card className="p-6 md:p-8 grid gap-6 md:grid-cols-[1.4fr,1fr] items-start border border-border/80">
             <div className="space-y-3">
               <div className="inline-flex items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
@@ -238,7 +242,7 @@ export default function Projects() {
 
       {/* Case Study 6 — Enterprise M&A Integration */}
       <section className="bg-secondary py-14 md:py-16">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto">
           <Card className="p-6 md:p-8 grid gap-6 md:grid-cols-[1.4fr,1fr] items-start border border-border/80 bg-white">
             <div className="space-y-3">
               <div className="inline-flex items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
@@ -282,7 +286,7 @@ export default function Projects() {
 
       {/* Bottom CTA */}
       <section className="bg-primary text-primary-foreground py-16 md:py-20">
-        <div className="container mx-auto px-4 text-center space-y-6">
+        <div className="container mx-auto text-center space-y-6">
           <h2 className="text-3xl md:text-4xl font-bold">
             Want results like these? Let&apos;s talk.
           </h2>
@@ -292,7 +296,7 @@ export default function Projects() {
             journey.
           </p>
           <Link href="/contact">
-            <a className="inline-flex items-center gap-2 rounded-lg bg-[#C9A84C] px-8 py-3 text-sm font-semibold text-[#050922] hover:bg-[#b2903f] transition-colors">
+            <a className="inline-flex items-center gap-2 rounded-lg bg-[var(--brand-accent-gold)] px-8 py-3 text-sm font-semibold text-[var(--brand-dark-deep)] hover:bg-[#b2903f] transition-colors">
               Contact Us
               <ArrowRight className="h-4 w-4" />
             </a>

@@ -10,7 +10,7 @@ export default function ServiceExternalGrowth() {
       <Navbar />
 
       <section className="bg-secondary py-16 md:py-20 border-b border-border/60">
-        <div className="container mx-auto px-4 space-y-5">
+        <div className="container mx-auto space-y-5">
           <div className="max-w-3xl space-y-3">
             <p className="text-xs font-semibold tracking-[0.25em] uppercase text-muted-foreground">
               Services · Expansion
@@ -27,7 +27,7 @@ export default function ServiceExternalGrowth() {
       </section>
 
       <section className="bg-white py-16 md:py-20 border-b border-border/60">
-        <div className="container mx-auto px-4 grid gap-8 md:grid-cols-[1.5fr,1fr] items-start">
+        <div className="container mx-auto grid gap-8 md:grid-cols-[1.5fr,1fr] items-start">
           <div className="space-y-6">
             <div className="space-y-3">
               <h2 className="text-xl md:text-2xl font-semibold text-primary">
@@ -90,7 +90,7 @@ export default function ServiceExternalGrowth() {
             </ul>
             <div className="pt-2">
               <Link href="/contact">
-                <a className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground hover:bg-[#101a3b] transition-colors">
+                <a className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground hover:bg-[var(--brand-primary-mid)] transition-colors">
                   Explore Growth &amp; Partnerships
                   <ArrowRight className="h-4 w-4" />
                 </a>
