@@ -100,5 +100,8 @@
     "overrides": {
       "tailwindcss>nanoid": "3.3.7"
     }
+  },
+  "vercel": {
+    "lastUpdate": "2026-02-19T13:55:00Z"
   }
 }
