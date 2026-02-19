@@ -4,8 +4,8 @@
     "outputDirectory": "dist/public",
     "rewrites": [
         {
-            "source": "/api/contact",
-            "destination": "/api/contact.ts"
+            "source": "/api/(.*)",
+            "destination": "/api/$1"
         },
         {
             "source": "/(.*)",

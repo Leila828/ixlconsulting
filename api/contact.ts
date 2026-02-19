@@ -2,8 +2,15 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 import nodemailer from 'nodemailer';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
+    if (req.method === 'OPTIONS') {
+        return res.status(200).end();
+    }
+
     if (req.method !== 'POST') {
-        return res.status(405).json({ success: false, message: 'Method not allowed' });
+        return res.status(405).json({
+            success: false,
+            message: `Method not allowed. Received: ${req.method}`
+        });
     }
 
     const { fullName, email, whatsapp, organization, role, country, service, message } = req.body;
