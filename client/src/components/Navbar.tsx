@@ -32,28 +32,26 @@ export function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-border">
       <div className="container mx-auto py-3 flex items-center justify-between gap-6">
-        <Link href="/">
-          <a className="flex items-center gap-3 hover:opacity-90 transition-opacity">
-            <img
-              src={logo}
-              alt="iXL Consulting Logo"
-              className="h-[46px] w-auto object-contain"
-            />
-            <div className="flex flex-col">
-              <span className="text-xl font-semibold text-primary">
-                iXL Consulting
-              </span>
-              <span className="text-xs text-muted-foreground hidden sm:inline">
-                Elevating Innovation, Empowering Digital Excellence
-              </span>
-            </div>
-          </a>
+        <Link href="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity">
+          <img
+            src={logo}
+            alt="iXL Consulting Logo"
+            className="h-[46px] w-auto object-contain"
+          />
+          <div className="flex flex-col">
+            <span className="text-xl font-semibold text-primary">
+              iXL Consulting
+            </span>
+            <span className="text-xs text-muted-foreground hidden sm:inline">
+              Elevating Innovation, Empowering Digital Excellence
+            </span>
+          </div>
         </Link>
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-6">
-          <Link href="/">
-            <a className={getLinkClass("/")}>Home</a>
+          <Link href="/" className={getLinkClass("/")}>
+            Home
           </Link>
 
           <div className="relative group">
@@ -80,31 +78,27 @@ export function Navbar() {
             </div>
           </div>
 
-          <Link href="/about">
-            <a className={getLinkClass("/about")}>About</a>
+          <Link href="/about" className={getLinkClass("/about")}>
+            About
           </Link>
-          <Link href="/projects">
-            <a className={getLinkClass("/projects")}>Case Studies</a>
+          <Link href="/projects" className={getLinkClass("/projects")}>
+            Case Studies
           </Link>
-          <Link href="/partners">
-            <a className={getLinkClass("/partners")}>Partners</a>
+          <Link href="/partners" className={getLinkClass("/partners")}>
+            Partners
           </Link>
-          <Link href="/insights">
-            <a className={getLinkClass("/insights")}>Insights</a>
+          <Link href="/insights" className={getLinkClass("/insights")}>
+            Insights
           </Link>
-          <Link href="/contact">
-            <a className="bg-primary text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-[var(--brand-primary-mid)] transition-colors">
-              Contact
-            </a>
+          <Link href="/contact" className="bg-primary text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-[var(--brand-primary-mid)] transition-colors">
+            Contact
           </Link>
         </div>
 
         {/* Mobile: hamburger + contact */}
         <div className="flex md:hidden items-center gap-3">
-          <Link href="/contact">
-            <a className="bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold">
-              Contact
-            </a>
+          <Link href="/contact" className="bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold">
+            Contact
           </Link>
           <button
             type="button"
@@ -124,10 +118,8 @@ export function Navbar() {
             <SheetTitle className="text-primary">Menu</SheetTitle>
           </SheetHeader>
           <div className="flex flex-col gap-1 pt-4">
-            <Link href="/" onClick={closeMobile}>
-              <a className="block py-3 px-2 text-foreground font-medium hover:bg-secondary rounded-lg">
-                Home
-              </a>
+            <Link href="/" onClick={closeMobile} className="block py-3 px-2 text-foreground font-medium hover:bg-secondary rounded-lg">
+              Home
             </Link>
             <p className="pt-2 pb-1 px-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
               Services
@@ -142,30 +134,20 @@ export function Navbar() {
                 {label}
               </a>
             ))}
-            <Link href="/about" onClick={closeMobile}>
-              <a className="block py-3 px-2 text-foreground font-medium hover:bg-secondary rounded-lg">
-                About
-              </a>
+            <Link href="/about" onClick={closeMobile} className="block py-3 px-2 text-foreground font-medium hover:bg-secondary rounded-lg">
+              About
             </Link>
-            <Link href="/projects" onClick={closeMobile}>
-              <a className="block py-3 px-2 text-foreground font-medium hover:bg-secondary rounded-lg">
-                Case Studies
-              </a>
+            <Link href="/projects" onClick={closeMobile} className="block py-3 px-2 text-foreground font-medium hover:bg-secondary rounded-lg">
+              Case Studies
             </Link>
-            <Link href="/partners" onClick={closeMobile}>
-              <a className="block py-3 px-2 text-foreground font-medium hover:bg-secondary rounded-lg">
-                Partners
-              </a>
+            <Link href="/partners" onClick={closeMobile} className="block py-3 px-2 text-foreground font-medium hover:bg-secondary rounded-lg">
+              Partners
             </Link>
-            <Link href="/insights" onClick={closeMobile}>
-              <a className="block py-3 px-2 text-foreground font-medium hover:bg-secondary rounded-lg">
-                Insights
-              </a>
+            <Link href="/insights" onClick={closeMobile} className="block py-3 px-2 text-foreground font-medium hover:bg-secondary rounded-lg">
+              Insights
             </Link>
-            <Link href="/contact" onClick={closeMobile}>
-              <a className="block py-3 px-2 text-primary font-semibold hover:bg-secondary rounded-lg">
-                Contact
-              </a>
+            <Link href="/contact" onClick={closeMobile} className="block py-3 px-2 text-primary font-semibold hover:bg-secondary rounded-lg">
+              Contact
             </Link>
           </div>
         </SheetContent>

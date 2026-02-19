@@ -31,42 +31,38 @@ export function Footer() {
             </h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/">
-                  <a className="hover:text-white transition-colors">Home</a>
+                <Link href="/" className="hover:text-white transition-colors">
+                  Home
                 </Link>
               </li>
               <li>
-                <Link href="/services">
-                  <a className="hover:text-white transition-colors">Services</a>
+                <Link href="/services" className="hover:text-white transition-colors">
+                  Services
                 </Link>
               </li>
               <li>
-                <Link href="/about">
-                  <a className="hover:text-white transition-colors">About</a>
+                <Link href="/about" className="hover:text-white transition-colors">
+                  About
                 </Link>
               </li>
               <li>
-                <Link href="/projects">
-                  <a className="hover:text-white transition-colors">
-                    Case Studies
-                  </a>
+                <Link href="/projects" className="hover:text-white transition-colors">
+                  Case Studies
                 </Link>
               </li>
               <li>
-                <Link href="/partners">
-                  <a className="hover:text-white transition-colors">Partners</a>
+                <Link href="/partners" className="hover:text-white transition-colors">
+                  Partners
                 </Link>
               </li>
               <li>
-                <Link href="/insights">
-                  <a className="hover:text-white transition-colors">
-                    Insights
-                  </a>
+                <Link href="/insights" className="hover:text-white transition-colors">
+                  Insights
                 </Link>
               </li>
               <li>
-                <Link href="/contact">
-                  <a className="hover:text-white transition-colors">Contact</a>
+                <Link href="/contact" className="hover:text-white transition-colors">
+                  Contact
                 </Link>
               </li>
             </ul>

@@ -17,6 +17,8 @@ export default function Contact() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
@@ -28,33 +30,43 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setError(null);
 
-    // Build mailto body with form data
-    const subject = encodeURIComponent(
-      `New Mandate Inquiry from ${formData.fullName} — ${formData.service || "General"}`
-    );
-    const body = encodeURIComponent(
-      `Full Name: ${formData.fullName}\nEmail: ${formData.email}\nWhatsApp: ${formData.whatsapp}\nOrganization: ${formData.organization}\nRole: ${formData.role}\nCountry: ${formData.country}\nService: ${formData.service}\n\nMessage:\n${formData.message}`
-    );
-    window.location.href = `mailto:support@ixlconsulting.tech?subject=${subject}&body=${body}`;
-
-    console.log("Contact form submitted:", formData);
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({
-        fullName: "",
-        email: "",
-        whatsapp: "",
-        organization: "",
-        role: "",
-        country: "",
-        service: "",
-        message: "",
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
-    }, 3000);
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({
+          fullName: "",
+          email: "",
+          whatsapp: "",
+          organization: "",
+          role: "",
+          country: "",
+          service: "",
+          message: "",
+        });
+      } else {
+        setError(result.message || "Failed to send message. Please try again later.");
+      }
+    } catch (err) {
+      console.error("Submission error:", err);
+      setError("An unexpected error occurred. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -219,12 +231,19 @@ export default function Contact() {
                     />
                   </div>
 
+                  {error && (
+                    <div className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-lg text-sm">
+                      {error}
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full bg-primary text-white px-6 py-3 rounded-lg hover:bg-[var(--brand-primary-mid)] transition-colors text-sm font-semibold flex items-center justify-center gap-2"
+                    disabled={isSubmitting}
+                    className="w-full bg-primary text-white px-6 py-3 rounded-lg hover:bg-[var(--brand-primary-mid)] transition-colors text-sm font-semibold flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                   >
-                    Send Message
-                    <Send className="h-4 w-4" />
+                    {isSubmitting ? "Sending..." : "Send Message"}
+                    {!isSubmitting && <Send className="h-4 w-4" />}
                   </button>
                 </form>
               )}
@@ -252,12 +271,12 @@ export default function Contact() {
                   <span>
                     LinkedIn:{" "}
                     <a
-                      href="https://ae.linkedin.com/in/salim-abid"
+                      href="https://ae.linkedin.com/company/ixl-consulting-tech"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="font-semibold text-foreground hover:text-primary transition-colors"
                     >
-                      Salim Abid
+                      iXL Consulting
                     </a>
                   </span>
                 </p>
