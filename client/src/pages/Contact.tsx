@@ -44,7 +44,17 @@ export default function Contact() {
         body: JSON.stringify(formData),
       });
 
-      const result = await response.json();
+      const contentType = response.headers.get("Content-Type") ?? "";
+      const isJson = contentType.includes("application/json");
+      const text = await response.text();
+      let result: { message?: string } | null = null;
+      if (isJson && text) {
+        try {
+          result = JSON.parse(text) as { message?: string };
+        } catch {
+          result = null;
+        }
+      }
 
       if (response.ok) {
         setSubmitted(true);
@@ -59,7 +69,12 @@ export default function Contact() {
           message: "",
         });
       } else {
-        setError(result.message || "Failed to send message. Please try again later.");
+        const message =
+          result?.message ??
+          (response.status === 405
+            ? "Contact form is not available on this server. Please email us directly."
+            : "Failed to send message. Please try again later.");
+        setError(message);
       }
     } catch (err) {
       console.error("Submission error:", err);
