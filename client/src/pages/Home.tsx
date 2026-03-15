@@ -93,7 +93,7 @@ export default function Home() {
               <Card className="relative overflow-hidden rounded-2xl border border-blue-500/30 bg-[var(--brand-dark)]/90 shadow-xl">
 
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_#3783B215,_transparent_60%)]" />
-                <p className="px-5 pt-4 mb-1 text-white text-xs uppercase tracking-[0.25em]">
+                <p className="px-7 pt-4 mb-1 text-white text-xs uppercase tracking-[0.40em]">
                   Founder Spotlight
                 </p>
                 <div className="relative p-5 flex items-center gap-4">
@@ -212,15 +212,7 @@ export default function Home() {
                 <h3 className="text-xl font-semibold text-primary">
                   Chief of Staff & Agile Transformation
                 </h3>
-                <p className="text-sm text-muted-foreground">
-                  Architect the executive operating model — OKRs, KPIs,
-                  governance, and agile execution — for boards, ministers, and
-                  CEOs seeking{" "}
-                  <span className="font-semibold">
-                    Chief of Staff consulting Saudi Arabia
-                  </span>{" "}
-                  and across the wider MENA region.
-                </p>
+
               </div>
               <div className="flex items-center justify-between px-6 pb-4 text-xs text-muted-foreground">
                 <span>OKR systems · KPI dashboards · CXO offices</span>
@@ -241,14 +233,7 @@ export default function Home() {
                 <h3 className="text-xl font-semibold text-primary">
                   Innovation Transformation
                 </h3>
-                <p className="text-sm text-muted-foreground">
-                  Design and scale innovation Centres of Excellence, pipelines
-                  from ideas to delivery, and{" "}
-                  <span className="font-semibold">
-                    innovation strategy Vision 2030
-                  </span>{" "}
-                  programs tightly aligned with national and corporate agendas.
-                </p>
+
               </div>
               <div className="flex items-center justify-between px-6 pb-4 text-xs text-muted-foreground">
                 <span>Innovation CoE · governance · portfolio</span>
@@ -269,14 +254,7 @@ export default function Home() {
                 <h3 className="text-xl font-semibold text-primary">
                   AI Transformation
                 </h3>
-                <p className="text-sm text-muted-foreground">
-                  Rapidly deploy AI agents, design AI roadmaps, and build
-                  commercial AI products — targeted, measurable{" "}
-                  <span className="font-semibold">
-                    AI transformation consulting MENA
-                  </span>{" "}
-                  for enterprises, regulators, and ecosystems.
-                </p>
+
               </div>
               <div className="flex items-center justify-between px-6 pb-4 text-xs text-muted-foreground">
                 <span>Agentic workflows · GenAI products</span>
@@ -297,12 +275,7 @@ export default function Home() {
                 <h3 className="text-xl font-semibold text-primary">
                   Training & Talent
                 </h3>
-                <p className="text-sm text-muted-foreground">
-                  Executive education, technical academies, vocational tracks,
-                  and community-led learning — building sustainable{" "}
-                  <span className="font-semibold">developer community MENA</span>{" "}
-                  and future-ready talent pipelines for your organization.
-                </p>
+
               </div>
               <div className="flex items-center justify-between px-6 pb-4 text-xs text-muted-foreground">
                 <span>Executive, technical & community tracks</span>
@@ -323,15 +296,7 @@ export default function Home() {
                 <h3 className="text-xl font-semibold text-primary">
                   External Growth & Partnerships
                 </h3>
-                <p className="text-sm text-muted-foreground">
-                  Structure M&A, international expansion, and China-to-MENA tech
-                  bridges. Design government and private sector pipelines,
-                  including large-scale{" "}
-                  <span className="font-semibold">
-                    hackathon management Middle East
-                  </span>{" "}
-                  and ecosystem platforms.
-                </p>
+
               </div>
               <div className="flex items-center justify-between px-6 pb-4 text-xs text-muted-foreground">
                 <span>M&A advisory · cross-border · ecosystems</span>
@@ -342,164 +307,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 4 — Why iXL / Founder Spotlight */}
-      <section className="bg-secondary py-20">
-        <div className="container mx-auto grid gap-12 lg:grid-cols-[1.1fr,1.2fr] items-center">
-          <div className="space-y-4">
-            <p className="text-xs font-semibold tracking-[0.25em] uppercase text-muted-foreground">
-              Founder
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-primary">
-              From Silicon Valley to Dubai — A Track Record That Speaks for
-              Itself
-            </h2>
-            <p className="text-sm md:text-base text-foreground leading-relaxed">
-              Salim Abid built iXL after an extensive career spanning Silicon
-              Valley, Google&apos;s MENA headquarters in Dubai, Qualcomm, and
-              Xilinx. As Google&apos;s Head of MENA Ecosystem, he scaled
-              developer training from 16K to 750K annually, built 500+
-              communities across 17 countries, and holds a Guinness World Record
-              for the 2018 Hajj Hackathon with 3,000 participants. iXL exists to
-              bring that Silicon Valley execution discipline to organizations
-              across the MENA region and beyond.
-            </p>
-            <Link href="/about">
-              <a className="inline-flex items-center gap-2 rounded-lg border border-primary px-6 py-2.5 text-sm font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition-colors">
-                Meet the Full Team
-                <ArrowRight className="h-4 w-4" />
-              </a>
-            </Link>
-          </div>
-          <div className="grid gap-4 md:grid-cols-2">
-            <Card className="p-5 border border-border/80 bg-white/80">
-              <div className="flex items-center gap-3 mb-3">
-                <Award className="h-5 w-5 text-[var(--brand-accent-gold)]" />
-                <p className="text-sm font-semibold text-primary">
-                  Guinness World Record
-                </p>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Lead organizer of the 2018 Hajj Hackathon — the world&apos;s
-                largest hackathon at the time, with over 3,000 participants and
-                global recognition.
-              </p>
-            </Card>
-            <Card className="p-5 border border-border/80 bg-white/80">
-              <div className="flex items-center gap-3 mb-3">
-                <Network className="h-5 w-5 text-[var(--brand-primary-light)]" />
-                <p className="text-sm font-semibold text-primary">
-                  Ecosystem Architect
-                </p>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Designed and scaled innovation programs across government,
-                banking, and Big Tech — from developer communities to executive
-                leadership programs.
-              </p>
-            </Card>
-          </div>
-        </div>
-      </section>
 
-      {/* SECTION 5 — AI Transformation Urgency Block */}
-      <section className="bg-[var(--brand-dark-deep)] text-white py-20">
-        <div className="container mx-auto space-y-10">
-          <div className="max-w-3xl space-y-4">
-            <p className="text-xs font-semibold tracking-[0.25em] uppercase text-blue-300/90">
-              AI Performance Mandate
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold">
-              The 10x Performance Mandate: Why AI Transformation Can&apos;t
-              Wait
-            </h2>
-            <p className="text-sm md:text-base text-blue-100/90">
-              Boardrooms are shifting from experimentation to execution. The
-              question is no longer whether to adopt AI — it&apos;s whether your
-              operating model, talent, and partnerships are ready for an
-              agent-centric future.
-            </p>
-          </div>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            <Card className="h-full border border-blue-500/30 bg-[var(--brand-dark)] text-blue-50">
-              <div className="p-5 space-y-3">
-                <p className="text-xs font-semibold text-blue-300 uppercase tracking-wide">
-                  2–10x Productivity Potential
-                </p>
-                <p className="text-sm leading-relaxed">
-                  MIT Sloan: organizations must move from &quot;tool-centric&quot; AI
-                  to{" "}
-                  <span className="font-semibold">agent-centric enterprises</span>{" "}
-                  to unlock exponential productivity.
-                </p>
-                <p className="text-[11px] text-blue-300/80">Source: MIT Sloan</p>
-              </div>
-            </Card>
 
-            <Card className="h-full border border-blue-500/30 bg-[var(--brand-dark)] text-blue-50">
-              <div className="p-5 space-y-3">
-                <p className="text-xs font-semibold text-blue-300 uppercase tracking-wide">
-                  $4.4 Trillion Opportunity
-                </p>
-                <p className="text-sm leading-relaxed">
-                  McKinsey estimates{" "}
-                  <span className="font-semibold">$4.4 trillion</span> in annual
-                  economic value from GenAI for early adopters that rewire
-                  workflows, not just deploy tools.
-                </p>
-                <p className="text-[11px] text-blue-300/80">Source: McKinsey</p>
-              </div>
-            </Card>
-
-            <Card className="h-full border border-blue-500/30 bg-[var(--brand-dark)] text-blue-50">
-              <div className="p-5 space-y-3">
-                <p className="text-xs font-semibold text-blue-300 uppercase tracking-wide">
-                  Competitive Displacement
-                </p>
-                <p className="text-sm leading-relaxed">
-                  Harvard Business School: firms that fail to re-architect
-                  around AI face{" "}
-                  <span className="font-semibold">
-                    structural competitive obsolescence
-                  </span>{" "}
-                  in the next decade.
-                </p>
-                <p className="text-[11px] text-blue-300/80">
-                  Source: Harvard Business School
-                </p>
-              </div>
-            </Card>
-
-            <Card className="h-full border border-blue-500/30 bg-[var(--brand-dark)] text-blue-50">
-              <div className="p-5 space-y-3">
-                <p className="text-xs font-semibold text-blue-300 uppercase tracking-wide">
-                  Human–Agent Collaboration
-                </p>
-                <p className="text-sm leading-relaxed">
-                  Stanford SALT Lab: only{" "}
-                  <span className="font-semibold">
-                    human–AI agent collaboration
-                  </span>{" "}
-                  models break through the productivity ceiling of traditional
-                  organizations.
-                </p>
-                <p className="text-[11px] text-blue-300/80">
-                  Source: Stanford SALT Lab
-                </p>
-              </div>
-            </Card>
-          </div>
-
-          <div>
-            <Link href="/services">
-              <a className="inline-flex items-center gap-2 rounded-lg bg-[var(--brand-primary-light)] px-7 py-3 text-sm font-semibold text-white hover:bg-[var(--brand-primary-mid)] transition-colors">
-                Explore Our AI Services
-                <ArrowRight className="h-4 w-4" />
-              </a>
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* SECTION 6 — Featured Clients & Partners Logos */}
       <section id="partners" className="bg-white py-20">

@@ -82,7 +82,7 @@ export function Navbar() {
             About
           </Link>
           <Link href="/projects" className={getLinkClass("/projects")}>
-            Case Studies
+            Our projects
           </Link>
           <Link href="/partners" className={getLinkClass("/partners")}>
             Partners

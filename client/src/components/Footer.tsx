@@ -130,7 +130,7 @@ export function Footer() {
             </a>
             <div className="flex items-center gap-3">
               <a
-                href="https://ae.linkedin.com/in/salim-abid"
+                href="https://ae.linkedin.com/company/ixl-consulting-tech"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
@@ -148,7 +148,7 @@ export function Footer() {
                 <Twitter className="h-4 w-4" />
               </a>
               <a
-                href="https://www.youtube.com/results?search_query=devmena"
+                href="https://www.youtube.com/@DevMENA"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube"
