@@ -18,6 +18,7 @@ import { HeroVisual } from "@/components/HeroVisual";
 import { VideoShowcase } from "@/components/VideoShowcase";
 import { CaseStudyGrid } from "@/components/CaseStudyGrid";
 import { TransformationVisual } from "@/components/TransformationVisual";
+import { HeroIveyTakeover } from "@/components/HeroIveyTakeover";
 
 export default function Home() {
   return (
@@ -168,6 +169,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* SECTION 2B — Ivey Business School Partnership */}
+      <HeroIveyTakeover />
 
       {/* SECTION 3 — The Transformation Quadrant */}
       <section

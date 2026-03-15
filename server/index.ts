@@ -63,6 +63,54 @@ ${message}
     }
   });
 
+  // API Route for Leads
+  app.post("/api/leads", async (req, res) => {
+    const { fullName, email, phone, metadata } = req.body;
+
+    if (!fullName || !email) {
+      return res.status(400).json({ success: false, message: "Missing required fields" });
+    }
+
+    const source = metadata?.source || "Brochure Download Form";
+
+    try {
+      const transporter = nodemailer.createTransport({
+        host: process.env.SMTP_HOST,
+        port: parseInt(process.env.SMTP_PORT || "587"),
+        secure: process.env.SMTP_SECURE === "true",
+        auth: {
+          user: process.env.SMTP_USER,
+          pass: process.env.SMTP_PASS,
+        },
+      });
+
+      const mailOptions = {
+        from: `"${fullName}" <${process.env.SMTP_USER}>`,
+        to: "support@ixlconsulting.tech",
+        replyTo: email,
+        subject: `New Lead: ${fullName} — ${source}`,
+        text: `
+New Lead Submission
+
+Source: ${source}
+Date: ${metadata?.timestamp || new Date().toISOString()}
+
+Full Name: ${fullName}
+Email: ${email}
+Phone: ${phone || 'Not provided'}
+
+Please manually send the brochure to the user at ${email} within 24 hours.
+        `,
+      };
+
+      await transporter.sendMail(mailOptions);
+      res.status(200).json({ success: true, message: "Lead sent successfully" });
+    } catch (error) {
+      console.error("Error sending lead email:", error);
+      res.status(500).json({ success: false, message: "Failed to send lead email. Please ensure SMTP settings are configured." });
+    }
+  });
+
   // Serve static files from dist/public in production
   const staticPath =
     process.env.NODE_ENV === "production"

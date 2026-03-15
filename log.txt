@@ -1,0 +1,5 @@
+﻿c19cf9e fix(vercel): address 405 error and add case study images
+5978fe1 fix(vercel): handle OPTIONS requests and improve API rewriting
+ae9f9da chore: configure project for Vercel deployment and unified local dev
+a0b0e27 Final sync for Vercel: Update lockfile and trigger fresh build
+c35642d Fix pnpm lockfile and implement Vercel Serverless Function for contact form
