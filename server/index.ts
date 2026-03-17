@@ -73,6 +73,34 @@ ${message}
 
     const source = metadata?.source || "Brochure Download Form";
 
+    // --- N8N WEBHOOK INTEGRATION ---
+    try {
+      const nameParts = fullName.trim().split(/\s+/);
+      const firstName = nameParts[0] || "";
+      const lastName = nameParts.slice(1).join(" ") || "";
+
+      const webhookPayload = {
+        firstName,
+        lastName,
+        email,
+        phone: phone || "Not provided",
+        source: metadata?.source,
+        timestamp: metadata?.timestamp
+      };
+
+      const webhookUrl = process.env.N8N_WEBHOOK_URL;
+      if (webhookUrl) {
+        await fetch(webhookUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(webhookPayload)
+        });
+      }
+    } catch (error) {
+      console.error('Error sending data to n8n webhook:', error);
+    }
+    // --- END N8N WEBHOOK INTEGRATION ---
+
     try {
       const transporter = nodemailer.createTransport({
         host: process.env.SMTP_HOST,
