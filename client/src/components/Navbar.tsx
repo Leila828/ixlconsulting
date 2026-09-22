@@ -16,6 +16,7 @@ const SERVICE_LINKS = [
   { href: "/services#ai-transformation", label: "AI Transformation" },
   { href: "/services#training-talent", label: "Training & Talent" },
   { href: "/services#external-growth-partnerships", label: "External Growth & Partnerships" },
+  { href: "/services/mobility-technology", label: "Mobility Technology & Infrastructure" },
 ];
 
 export function Navbar() {

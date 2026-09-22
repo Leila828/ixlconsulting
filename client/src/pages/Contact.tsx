@@ -275,10 +275,10 @@ export default function Contact() {
                 <p>
                   <span className="font-semibold text-foreground">Email:</span>{" "}
                   <a
-                    href="mailto:support@ixlconsulting.tech"
+                    href="mailto:salim@ixlconsulting.tech"
                     className="text-[var(--brand-primary-light)] hover:underline"
                   >
-                    support@ixlconsulting.tech
+                    salim@ixlconsulting.tech
                   </a>
                 </p>
                 <p className="flex items-center gap-2">

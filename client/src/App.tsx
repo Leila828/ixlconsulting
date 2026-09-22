@@ -16,6 +16,7 @@ import ServiceInnovation from "./pages/ServiceInnovation";
 import ServiceAiTransformation from "./pages/ServiceAiTransformation";
 import ServiceTrainingTalent from "./pages/ServiceTrainingTalent";
 import ServiceExternalGrowth from "./pages/ServiceExternalGrowth";
+import ServiceMobilityTechnology from "./pages/ServiceMobilityTechnology";
 
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -34,6 +35,7 @@ function Router() {
         <Route path={"/services/ai-transformation"} component={ServiceAiTransformation} />
         <Route path={"/services/training-talent"} component={ServiceTrainingTalent} />
         <Route path={"/services/external-growth-partnerships"} component={ServiceExternalGrowth} />
+        <Route path={"/services/mobility-technology"} component={ServiceMobilityTechnology} />
         <Route path={"/insights"} component={Insights} />
         <Route path={"/contact"} component={Contact} />
         <Route path={"/404"} component={NotFound} />

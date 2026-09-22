@@ -123,10 +123,10 @@ export function Footer() {
               Get in Touch
             </h4>
             <a
-              href="mailto:support@ixlconsulting.tech"
+              href="mailto:salim@ixlconsulting.tech"
               className="text-sm text-[var(--brand-accent-gold)] hover:underline block mb-4"
             >
-              support@ixlconsulting.tech
+              salim@ixlconsulting.tech
             </a>
             <div className="flex items-center gap-3">
               <a

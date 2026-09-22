@@ -5,8 +5,10 @@ import {
   Brain,
   Globe2,
   LineChart,
+  MapPinned,
   Network,
   ShieldCheck,
+  TrainFront,
   Target,
   Users,
 } from "lucide-react";
@@ -314,6 +316,65 @@ export default function Home() {
 
 
 
+
+      {/* SECTION 4 — Mobility Technology & Infrastructure Expertise */}
+      <section className="bg-secondary py-20 border-b border-border/60">
+        <div className="container mx-auto space-y-10">
+          <div className="max-w-3xl space-y-4">
+            <p className="text-xs font-semibold tracking-[0.25em] uppercase text-muted-foreground">
+              Specialized Expertise
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary">
+              Mobility Technology &amp; Infrastructure Expertise
+            </h2>
+            <p className="text-sm md:text-base text-muted-foreground">
+              We deliver program management, technical assurance, and strategic advisory for
+              large-scale public transport transformations — from intelligent transport systems and
+              account-based ticketing to payment ecosystems and multi-modal integration.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <Card className="p-6 space-y-3 border border-border/80 bg-white">
+              <TrainFront className="h-5 w-5 text-[var(--brand-primary-light)]" />
+              <h3 className="text-sm font-semibold text-primary">ITS &amp; Operations</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                AVM, CAD/AVL, dispatch, and passenger information systems.
+              </p>
+            </Card>
+            <Card className="p-6 space-y-3 border border-border/80 bg-white">
+              <Network className="h-5 w-5 text-[var(--brand-primary-light)]" />
+              <h3 className="text-sm font-semibold text-primary">Account-Based Ticketing</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Modern ABT platforms, open payments, and national transit schemes.
+              </p>
+            </Card>
+            <Card className="p-6 space-y-3 border border-border/80 bg-white">
+              <ShieldCheck className="h-5 w-5 text-[var(--brand-primary-light)]" />
+              <h3 className="text-sm font-semibold text-primary">Revenue Assurance</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                PCI-DSS, settlement, clearing, and multi-party revenue apportionment.
+              </p>
+            </Card>
+            <Card className="p-6 space-y-3 border border-border/80 bg-white">
+              <MapPinned className="h-5 w-5 text-[var(--brand-primary-light)]" />
+              <h3 className="text-sm font-semibold text-primary">Multi-Modal Integration</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                BRT, rail, micro-mobility, and EV/hydrogen fleet alignment.
+              </p>
+            </Card>
+          </div>
+
+          <div>
+            <Link href="/services/mobility-technology">
+              <a className="inline-flex items-center gap-2 rounded-lg bg-primary px-7 py-3 text-sm font-semibold text-primary-foreground hover:bg-[var(--brand-primary-mid)] transition-colors">
+                Learn More
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* SECTION 6 — Featured Clients & Partners Logos */}
       <section id="partners" className="bg-white py-20">
