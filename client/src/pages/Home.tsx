@@ -20,7 +20,7 @@ import { HeroVisual } from "@/components/HeroVisual";
 import { VideoShowcase } from "@/components/VideoShowcase";
 import { CaseStudyGrid } from "@/components/CaseStudyGrid";
 import { TransformationVisual } from "@/components/TransformationVisual";
-import { HeroIveyTakeover } from "@/components/HeroIveyTakeover";
+
 
 export default function Home() {
   return (
@@ -60,7 +60,7 @@ export default function Home() {
                 </a>
               </Link>
               <a
-                href="https://drive.google.com/file/d/1tVUXrc6mx3zYwwg_1-IU3QxZC5wS0IVL/view?usp=sharing"
+                href="https://drive.google.com/file/d/1R0o6JbgZLf1mzTdQX0vVHwAU3N4UD0oi/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg border border-[var(--brand-accent-gold)] px-7 py-3 text-sm font-semibold text-[var(--brand-accent-gold)] hover:bg-[var(--brand-accent-gold)] hover:text-[var(--brand-dark-deep)] transition-colors"
@@ -172,8 +172,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 2B — Ivey Business School Partnership */}
-      <HeroIveyTakeover />
+  
 
       {/* SECTION 3 — The Transformation Quadrant */}
       <section

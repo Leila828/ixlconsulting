@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu } from "lucide-react";
 import logo from "../pages/images/logo.png";
-import { AnnouncementBar } from "./AnnouncementBar";
+
 import {
   Sheet,
   SheetContent,
@@ -33,7 +33,7 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full flex flex-col">
-      <AnnouncementBar />
+    
       <nav className="bg-white/95 backdrop-blur border-b border-border">
         <div className="container mx-auto py-3 flex items-center justify-between gap-6">
         <Link href="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity">
