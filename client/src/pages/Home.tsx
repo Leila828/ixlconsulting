@@ -60,7 +60,7 @@ export default function Home() {
                 </a>
               </Link>
               <a
-                href="https://drive.google.com/file/d/1gLA9JLtRJuK4TtGPe_gkBVe3r34gUvVb/view?usp=sharing"
+                href="https://drive.google.com/file/d/1zrhjDpr-KzL78GC_r89RqLT6hIdx_fhc/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg border border-[var(--brand-accent-gold)] px-7 py-3 text-sm font-semibold text-[var(--brand-accent-gold)] hover:bg-[var(--brand-accent-gold)] hover:text-[var(--brand-dark-deep)] transition-colors"
